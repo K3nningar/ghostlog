@@ -1,0 +1,43 @@
+{
+    "layout": {
+    "language": "Language"
+    },
+
+    "sparrows": {
+        "title": "Sparrows",
+        "search_label": "Search",
+        "search_placeholder": "Sparrow name...",
+        "rarity_label": "Rarity",
+        "rarity_all": "All",
+        "rarity_exotic": "Exotic",
+        "rarity_legendary": "Legendary",
+        "rarity_rare": "Rare",
+        "rarity_uncommon": "Uncommon",
+        "rarity_basic": "Basic",
+        "confidentiality_label": "Confidentiality",
+        "confidentiality_all": "All",
+        "sort_label": "Sort by",
+        "classified_only": "Classified only",
+        "classified_item": "Classified item",
+        "classified_item_description": "Item made classified by Bungie, but known to the community. It has been restored from cross-referenced external sources.",
+        "public_only": "Public only",
+        "reset": "Reset",
+        "results_count": "{count} sparrows found | {count} sparrow found"
+    },
+
+    "drawer": {
+        "no_icon": "No icon",
+        "confidential": "Classified",
+        "other_languages": "Other available languages",
+        "view_in_game": "In-game view",
+        "close": "Close"
+    },
+    "categories": {
+        "weapons": "Weapons",
+        "armors": "Armor",
+        "ships": "Ships",
+        "sparrows": "Sparrows",
+        "emblems": "Emblems",
+        "consumables": "Consumables"
+    }
+}

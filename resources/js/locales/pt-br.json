@@ -1,0 +1,41 @@
+{
+    "layout": {
+    "language": "pt-br.language"
+    },
+
+    "sparrows": {
+        "title": "pt-br.sparrows",
+        "search_label": "pt-br.search_label",
+        "search_placeholder": "pt-br.search_placeholder",
+        "rarity_label": "pt-br.rarity_label",
+        "rarity_exotic": "pt-br.rarity_exotic",
+        "rarity_legendary": "pt-br.rarity_legendary",
+        "rarity_rare": "pt-br.rarity_rare",
+        "rarity_uncommon": "pt-br.rarity_uncommon",
+        "rarity_basic": "pt-br.rarity_basic",
+        "rarity_all": "pt-br.rarity_all",
+        "confidentiality_label": "pt-br.confidentiality_label",
+        "classified_only": "pt-br.classified_only",
+        "public_only": "pt-br.public_only",
+        "classified_item": "pt-br.classified_item",
+        "classified_item_description": "pt-br.classified_item_description",
+        "confidentiality_all": "pt-br.confidentiality_all",
+        "reset": "pt-br.reset",
+        "results_count": "{count} pt-br.sparrows found | {count} pt-br.sparrow found"
+    },
+    "drawer": {
+        "no_icon": "pt-br.no_icon",
+        "confidential": "pt-br.confidential",
+        "other_languages": "pt-br.other_languages",
+        "view_in_game": "pt-br.view_in_game",
+        "close": "pt-br.close"
+    },
+    "categories": {
+        "weapons": "pt-br.weapons",
+        "armors": "pt-br.armors",
+        "ships": "pt-br.ships",
+        "sparrows": "pt-br.sparrows",
+        "emblems": "pt-br.emblems",
+        "consumables": "pt-br.consumables"
+    }
+}

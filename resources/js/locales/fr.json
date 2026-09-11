@@ -1,0 +1,47 @@
+{
+    "layout": {
+    "language": "Langue"
+    },
+
+    "sparrows": {
+        "title": "Passereaux",
+        "search_label": "Recherche",
+        "search_placeholder": "Nom du passereau...",
+        "rarity_label": "Rareté",
+        "rarity_all": "Toutes",
+        "rarity_exotic": "Exotique",
+        "rarity_legendary": "Légendaire",
+        "rarity_rare": "Rare",
+        "rarity_uncommon": "Peu commun",
+        "rarity_basic": "Commun",
+        "confidentiality_label": "Confidentialité",
+        "confidentiality_all": "Tous",
+        "sort_label": "Trier par",
+        "classified_only": "Confidentiels seulement",
+        "secret_item": "Objet secret",
+        "secret_item_description": "Objet n'ayant jamais pu être découvert clairement via la base de données. Il a été restauré à partir de techniques d'émulation.",
+        "censored_item": "Objet censuré",
+        "censored_item_description": "Objet ayant juste la mention censurée dans la base de données. Il a été restauré à partir de sources externes croisées.",
+        "classified_item": "Objet confidentiel",
+        "classified_item_description": "Objet rendu confidentiel par Bungie, mais connu de la communauté. Il a été restauré à partir de sources externes croisées.",
+        "public_only": "Publics seulement",
+        "reset": "Réinitialiser",
+        "results_count": "{count} passereau trouvé | {count} passereaux trouvés"
+    },
+
+    "drawer": {
+        "no_icon": "Pas de visuel disponible",
+        "other_languages": "Autres langues disponibles",
+        "view_in_game": "Voir le visuel en jeu",
+        "close": "Fermer"
+    },
+
+    "categories": {
+        "weapons": "Armes",
+        "armors": "Armures",
+        "ships": "Vaisseaux",
+        "sparrows": "Passereaux",
+        "emblems": "Emblèmes",
+        "consumables": "Consommables"
+    }
+}

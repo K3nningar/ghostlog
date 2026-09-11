@@ -1,0 +1,41 @@
+{
+    "layout": {
+    "language": "de.language"
+    },
+
+    "sparrows": {
+        "title": "de.sparrows",
+        "search_label": "de.search_label",
+        "search_placeholder": "de.search_placeholder",
+        "rarity_label": "de.rarity_label",
+        "rarity_exotic": "de.rarity_exotic",
+        "rarity_legendary": "de.rarity_legendary",
+        "rarity_rare": "de.rarity_rare",
+        "rarity_uncommon": "de.rarity_uncommon",
+        "rarity_basic": "de.rarity_basic",
+        "rarity_all": "de.rarity_all",
+        "confidentiality_label": "de.confidentiality_label",
+        "classified_only": "de.classified_only",
+        "classified_item": "de.classified_item",
+        "classified_item_description": "de.classified_item_description",
+        "public_only": "de.public_only",
+        "confidentiality_all": "de.confidentiality_all",
+        "reset": "de.reset",
+        "results_count": "{count} de.sparrows found | {count} de.sparrow found"
+    },
+    "drawer": {
+        "no_icon": "de.no_icon",
+        "confidential": "de.confidential",
+        "other_languages": "de.other_languages",
+        "view_in_game": "de.view_in_game",
+        "close": "de.close"
+    },
+    "categories": {
+        "weapons": "de.weapons",
+        "armors": "de.armors",
+        "ships": "de.ships",
+        "sparrows": "de.sparrows",
+        "emblems": "de.emblems",
+        "consumables": "de.consumables"
+    }
+}
