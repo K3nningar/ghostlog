@@ -1,6 +1,11 @@
 <?php
 
-// app/Services/BungieApiService.php
+namespace App\Services;
+
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
+use ZipArchive;
+
 class BungieApiService
 {
     protected string $baseUrl = 'https://www.bungie.net';

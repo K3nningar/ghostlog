@@ -1,6 +1,12 @@
 <?php
 
-// app/Console/Commands/ArchiveDestinyCommand.php
+namespace App\Console\Commands;
+
+use App\Models\ManifestVersion;
+use App\Services\BungieApiService;
+use App\Services\ManifestParserService;
+use Illuminate\Console\Command;
+
 class ArchiveDestinyCommand extends Command
 {
     protected $signature = 'destiny:archive {--locale=fr}';

@@ -1,6 +1,12 @@
 <?php
 
-// app/Services/ManifestParserService.php
+namespace App\Services;
+
+use App\Jobs\ParseInventoryItemJob;
+use App\Models\ManifestVersion;
+use Illuminate\Support\Facades\Log;
+use PDO;
+
 class ManifestParserService
 {
     public function __construct(

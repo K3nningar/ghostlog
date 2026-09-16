@@ -1,6 +1,9 @@
 <?php
 
-// app/Services/ItemCategorizerService.php
+namespace App\Services;
+
+use App\Enums\DestinyItemType;
+
 class ItemCategorizerService
 {
     /**

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Enums;
+
 enum DestinyItemType: int
 {
     case Weapon = 3;
