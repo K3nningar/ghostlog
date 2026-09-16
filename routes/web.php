@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ItemLocaleController;
+use App\Http\Controllers\EmblemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShipController;
 use App\Http\Controllers\SparrowController;
@@ -27,6 +28,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/sparrows', [SparrowController::class, 'index'])->name('sparrows.index');
 Route::get('/ships', [ShipController::class, 'index'])->name('ships.index');
+Route::get('/emblems', [EmblemController::class, 'index'])->name('emblems.index');
 
 Route::post('/locale', function (\Illuminate\Http\Request $request) {
     $locale = $request->input('locale', 'fr');

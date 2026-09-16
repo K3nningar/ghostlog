@@ -12,7 +12,7 @@ class Item extends Model
         'item_type', 'item_type_name', 'item_sub_type', 'class_type',
         'tier_type', 'tier_type_name', 'bucket_type_hash',
         'category_hashes', 'category_slug', 'subcategory_slug',
-        'icon_downloaded', 'archive_icon_path', 'raw_json',
+        'icon_downloaded', 'archive_icon_path', 'archive_icon_path_secondary', 'raw_json',
     ];
 
     protected $casts = [

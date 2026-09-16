@@ -22,6 +22,12 @@
         "classified_only": "Somente classificadas",
         "classified_item": "Item classificado",
         "classified_item_description": "Item classificado pela Bungie, mas conhecido pela comunidade. Foi restaurado a partir de fontes externas cruzadas.",
+        "censored_item": "Item censurado",
+        "censored_item_description": "Item cujo nome e detalhes foram censurados na API.",
+        "beta_item": "Item beta",
+        "beta_item_description": "Item duplicado por ter sido usado historicamente para testes de pré-lançamento. Seu visual original foi restaurado com base em fontes cruzadas.",
+        "replaced_item": "Item substituído",
+        "replaced_item_description": "Item substituído por outro na API. Ele tem o mesmo hash do item atual. O visual original foi restaurado com base em fontes externas cruzadas.",
         "secret_item": "Item secreto",
         "secret_item_description": "Item definido diretamente como classificado na API. Restam apenas suas referências. Nenhuma informação está disponível no momento.",
         "public_only": "Somente públicas",
@@ -30,32 +36,35 @@
     "weapons": {
         "title": "Armas",
         "search_placeholder": "Nome da arma...",
-        "results_count": "{count} armas encontradas | {count} arma encontrada"
+        "results_count": "{count} arma encontradas | {count} armas encontrada"
     },
     "armors": {
         "title": "Armaduras",
         "search_placeholder": "Nome da armadura...",
-        "results_count": "{count} peças de armadura encontradas | {count} peça de armadura encontrada"
+        "results_count": "{count} peça de armadura encontradas | {count} peças de armadura encontradas"
     },
     "ships": {
         "title": "Naves",
         "search_placeholder": "Nome da nave...",
-        "results_count": "{count} naves encontradas | {count} nave encontrada"
+        "results_count": "{count} nave encontradas | {count} naves encontradas"
     },
     "sparrows": {
         "title": "Sparrows",
         "search_placeholder": "Nome do Sparrow...",
-        "results_count": "{count} Sparrows encontrados | {count} Sparrow encontrado"
+        "results_count": "{count} Sparrow encontrado | {count} Sparrows encontrados"
     },
     "emblems": {
         "title": "Emblemas",
         "search_placeholder": "Nome do emblema...",
-        "results_count": "{count} emblemas encontrados | {count} emblema encontrado"
+        "results_count": "{count} emblema encontrado | {count} emblemas encontrados",
+        "empty_state": "Nenhum emblema corresponde a estes critérios.",
+        "description_label": "Descrição",
+        "hash_label": "Hash"
     },
     "consumables": {
         "title": "Consumíveis",
         "search_placeholder": "Nome do consumível...",
-        "results_count": "{count} consumíveis encontrados | {count} consumível encontrado"
+        "results_count": "{count} consumível encontrado | {count} consumíveis encontrados"
     },
     "drawer": {
         "no_icon": "Nenhum ícone disponível",

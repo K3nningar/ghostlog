@@ -23,6 +23,12 @@
         "classified_only": "Classified only",
         "classified_item": "Classified item",
         "classified_item_description": "Item made classified by Bungie, but known to the community. It has been restored from cross-referenced external sources.",
+        "censored_item": "Censored item",
+        "censored_item_description": "Item whose name and details have been censored in the API.",
+        "beta_item": "Beta item",
+        "beta_item_description": "Duplicate item historically used for pre-release testing. Its original visual has now been restored using cross-referenced sources.",
+        "replaced_item": "Replaced item",
+        "replaced_item_description": "Item replaced by another item in the API. It has the same hash as the current item. Original visual restored from cross-referenced external sources.",
         "secret_item": "Secret item",
         "secret_item_description": "Item that has been directly set as classified in the API. Only its references remain. No information is available at this time.",
         "public_only": "Public only",
@@ -32,37 +38,40 @@
     "weapons": {
         "title": "Weapons",
         "search_placeholder": "Weapon name...",
-        "results_count": "{count} weapons found | {count} weapon found"
+        "results_count": "{count} weapon found | {count} weapons found"
     },
 
     "armors": {
         "title": "Armor",
         "search_placeholder": "Armor name...",
-        "results_count": "{count} armor pieces found | {count} armor piece found"
+        "results_count": "{count} armor piece found | {count} armor pieces found"
     },
 
     "ships": {
         "title": "Ships",
         "search_placeholder": "Ship name...",
-        "results_count": "{count} ships found | {count} ship found"
+        "results_count": "{count} ship found | {count} ships found"
     },
 
     "sparrows": {
         "title": "Sparrows",
         "search_placeholder": "Sparrow name...",
-        "results_count": "{count} sparrows found | {count} sparrow found"
+        "results_count": "{count} sparrow found | {count} sparrows found"
     },
 
     "emblems": {
         "title": "Emblems",
         "search_placeholder": "Emblem name...",
-        "results_count": "{count} emblems found | {count} emblem found"
+        "results_count": "{count} emblem found | {count} emblems found",
+        "empty_state": "No emblem matches these criteria.",
+        "description_label": "Description",
+        "hash_label": "Hash"
     },
 
     "consumables": {
         "title": "Consumables",
         "search_placeholder": "Consumable name...",
-        "results_count": "{count} consumables found | {count} consumable found"
+        "results_count": "{count} consumable found | {count} consumables found"
     },
 
 

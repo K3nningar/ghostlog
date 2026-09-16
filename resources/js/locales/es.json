@@ -22,6 +22,12 @@
         "classified_only": "Solo clasificadas",
         "classified_item": "Objeto clasificado",
         "classified_item_description": "Objeto clasificado por Bungie, pero conocido por la comunidad. Se ha restaurado a partir de fuentes externas contrastadas.",
+        "censored_item": "Objeto censurado",
+        "censored_item_description": "Objeto cuyo nombre y detalles han sido censurados en la API.",
+        "beta_item": "Objeto beta",
+        "beta_item_description": "Objeto duplicado utilizado históricamente para pruebas previas al lanzamiento. Su imagen original ha sido restaurada gracias a fuentes contrastadas.",
+        "replaced_item": "Objeto reemplazado",
+        "replaced_item_description": "Objeto reemplazado por otro en la API. Tiene el mismo hash que el objeto actual. La imagen original se ha restaurado a partir de fuentes externas contrastadas.",
         "secret_item": "Objeto secreto",
         "secret_item_description": "Objeto marcado directamente como clasificado en la API. Solo quedan sus referencias. No hay información disponible por el momento.",
         "public_only": "Solo públicas",
@@ -30,32 +36,35 @@
     "weapons": {
         "title": "Armas",
         "search_placeholder": "Nombre del arma...",
-        "results_count": "{count} armas encontradas | {count} arma encontrada"
+        "results_count": "{count} arma encontradas | {count} armas encontrada"
     },
     "armors": {
         "title": "Armaduras",
         "search_placeholder": "Nombre de la armadura...",
-        "results_count": "{count} piezas de armadura encontradas | {count} pieza de armadura encontrada"
+        "results_count": "{count} pieza de armadura encontradas | {count} piezas de armadura encontradas"
     },
     "ships": {
         "title": "Naves",
         "search_placeholder": "Nombre de la nave...",
-        "results_count": "{count} naves encontradas | {count} nave encontrada"
+        "results_count": "{count} nave encontradas | {count} naves encontradas"
     },
     "sparrows": {
         "title": "Colibríes",
         "search_placeholder": "Nombre del colibrí...",
-        "results_count": "{count} colibríes encontrados | {count} colibrí encontrado"
+        "results_count": "{count} colibrí encontrados | {count} colibríes encontrado"
     },
     "emblems": {
         "title": "Emblemas",
         "search_placeholder": "Nombre del emblema...",
-        "results_count": "{count} emblemas encontrados | {count} emblema encontrado"
+        "results_count": "{count} emblema encontrado | {count} emblemas encontrados",
+        "empty_state": "Ningún emblema coincide con estos criterios.",
+        "description_label": "Descripción",
+        "hash_label": "Hash"
     },
     "consumables": {
         "title": "Consumibles",
         "search_placeholder": "Nombre del consumible...",
-        "results_count": "{count} consumibles encontrados | {count} consumible encontrado"
+        "results_count": "{count} consumible encontrado | {count} consumibles encontrados"
     },
     "drawer": {
         "no_icon": "No hay icono disponible",

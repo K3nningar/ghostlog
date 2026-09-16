@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('hash')->unique()->index();
+            $table->string('hash')->unique()->index();
             $table->string('locale', 8)->default('fr');
 
             // Champs "utiles" dénormalisés pour recherche/tri rapide (indexés)

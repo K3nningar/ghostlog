@@ -22,6 +22,12 @@
         "classified_only": "分類済みのみ",
         "classified_item": "分類済みアイテム",
         "classified_item_description": "Bungieによって機密扱いにされたものの、コミュニティには知られているアイテムです。外部の複数の情報源を照合して復元されています。",
+        "censored_item": "検閲済みアイテム",
+        "censored_item_description": "APIで名前と詳細が検閲されているアイテムです。",
+        "beta_item": "ベータアイテム",
+        "beta_item_description": "リリース前のテストに過去使用された複製アイテムです。元のビジュアルは複数の情報源を照合して復元されています。",
+        "replaced_item": "置換されたアイテム",
+        "replaced_item_description": "API内で別のアイテムに置き換えられたアイテムです。現在のアイテムと同じハッシュを持ちます。元のビジュアルは外部の複数の情報源を照合して復元されています。",
         "secret_item": "秘密のアイテム",
         "secret_item_description": "APIで直接機密扱いに設定されたアイテムです。残っているのは参照情報だけで、現時点では情報がありません。",
         "public_only": "公開済みのみ",
@@ -50,7 +56,10 @@
     "emblems": {
         "title": "エンブレム",
         "search_placeholder": "エンブレム名...",
-        "results_count": "{count}個のエンブレムが見つかりました | {count}個のエンブレムが見つかりました"
+        "results_count": "{count}個のエンブレムが見つかりました | {count}個のエンブレムが見つかりました",
+        "empty_state": "条件に一致するエンブレムはありません。",
+        "description_label": "説明",
+        "hash_label": "ハッシュ"
     },
     "consumables": {
         "title": "消耗品",

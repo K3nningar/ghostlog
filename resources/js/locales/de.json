@@ -23,6 +23,12 @@
         "classified_only": "Nur klassifizierte",
         "classified_item": "Klassifiziertes Objekt",
         "classified_item_description": "Von Bungie als vertraulich eingestuftes, der Community jedoch bekanntes Objekt. Es wurde anhand mehrerer externer Quellen rekonstruiert.",
+        "censored_item": "Zensiertes Objekt",
+        "censored_item_description": "Objekt, dessen Name und Details in der API zensiert wurden.",
+        "beta_item": "Beta-Objekt",
+        "beta_item_description": "Dupliziertes Objekt, das historisch für Tests vor der Veröffentlichung verwendet wurde. Sein ursprüngliches Bild wurde mithilfe abgeglichener Quellen wiederhergestellt.",
+        "replaced_item": "Ersetztes Objekt",
+        "replaced_item_description": "Objekt, das in der API durch ein anderes ersetzt wurde. Es hat denselben Hash wie das aktuelle Objekt. Das ursprüngliche Bild wurde anhand abgeglichener externer Quellen wiederhergestellt.",
         "secret_item": "Geheimes Objekt",
         "secret_item_description": "Objekt, das in der API direkt als vertraulich eingestuft wurde. Nur seine Referenzen sind erhalten geblieben. Derzeit sind keine Informationen verfügbar.",
         "public_only": "Nur öffentliche",
@@ -56,7 +62,10 @@
     "emblems": {
         "title": "Abzeichen",
         "search_placeholder": "Name des Abzeichens...",
-        "results_count": "{count} Abzeichen gefunden | {count} Abzeichen gefunden"
+        "results_count": "{count} Abzeichen gefunden | {count} Abzeichen gefunden",
+        "empty_state": "Keine Abzeichen entsprechen diesen Kriterien.",
+        "description_label": "Beschreibung",
+        "hash_label": "Hash"
     },
 
     "consumables": {

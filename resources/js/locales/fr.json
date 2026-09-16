@@ -23,6 +23,12 @@
         "classified_only": "Confidentiels seulement",
         "classified_item": "Objet confidentiel",
         "classified_item_description": "Objet rendu confidentiel par Bungie, mais connu de la communauté. Il a été restauré à partir de sources externes croisées.",
+        "censored_item": "Objet censuré",
+        "censored_item_description": "Objet dont le nom et les détails ont été censurés dans l'API.",
+        "beta_item": "Objet bêta",
+        "beta_item_description": "Objet dupliqué, utilisé historiquement à des fins de test pré-release. Son visuel original est désormais restauré grâce à des sources croisées.",
+        "replaced_item": "Objet remplacé",
+        "replaced_item_description": "Objet ayant été remplacé par un autre dans l'API. Le hash est le même que l'objet actuel. Visuel original restauré à partir de sources externes croisées.",
         "secret_item": "Objet secret",
         "secret_item_description": "Objet ayant été directement mis en tant que confidentiel dans l'API. Seuls ses références subsistent. Aucune information n'est disponible pour le moment.",
         "public_only": "Publics seulement",
@@ -56,7 +62,10 @@
     "emblems": {
         "title": "Emblèmes",
         "search_placeholder": "Nom de l'emblème...",
-        "results_count": "{count} emblème trouvé | {count} emblèmes trouvés"
+        "results_count": "{count} emblème trouvé | {count} emblèmes trouvés",
+        "empty_state": "Aucun emblème ne correspond à ces critères.",
+        "description_label": "Description",
+        "hash_label": "Hash"
     },
 
     "consumables": {

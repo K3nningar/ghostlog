@@ -86,6 +86,18 @@
                     >
                         {{ $t('ships.classified_item') }}
                     </span>
+                    <span
+                        v-else-if="ship.subcategory_slug === 'beta'"
+                        class="absolute left-4 top-4 rounded px-2 py-1 text-xs font-semibold uppercase bg-blue-500/90 text-white"
+                    >
+                        {{ $t('items.beta_item') }}
+                    </span>
+                    <span
+                        v-else-if="ship.subcategory_slug === 'replaced'"
+                        class="absolute left-4 top-4 rounded px-2 py-1 text-xs font-semibold uppercase bg-gray-500/90 text-white"
+                    >
+                        {{ $t('items.replaced_item') }}
+                    </span>
                 </div>
 
                 <div class="p-6 space-y-6">
@@ -129,6 +141,18 @@
                         class="text-[10px] bg-gray-700 text-white px-1.5 py-0.5 rounded font-semibold inline-block"
                     >
                         {{ $t('ships.classified_item_description') }}
+                    </span>
+                    <span
+                        v-if="ship.subcategory_slug === 'beta'"
+                        class="text-[10px] bg-gray-700 text-white px-1.5 py-0.5 rounded font-semibold inline-block"
+                    >
+                        {{ $t('items.beta_item_description') }}
+                    </span>
+                    <span
+                        v-if="ship.subcategory_slug === 'replaced'"
+                        class="text-[10px] bg-gray-700 text-white px-1.5 py-0.5 rounded font-semibold inline-block"
+                    >
+                        {{ $t('items.replaced_item_description') }}
                     </span>
 
                     <!-- Traductions -->

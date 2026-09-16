@@ -22,6 +22,12 @@
         "classified_only": "Solo classificate",
         "classified_item": "Oggetto classificato",
         "classified_item_description": "Oggetto classificato da Bungie, ma noto alla comunità. È stato ripristinato utilizzando fonti esterne incrociate.",
+        "censored_item": "Oggetto censurato",
+        "censored_item_description": "Oggetto il cui nome e i cui dettagli sono stati censurati nell'API.",
+        "beta_item": "Oggetto beta",
+        "beta_item_description": "Oggetto duplicato utilizzato storicamente per test pre-release. La sua immagine originale è stata ripristinata grazie a fonti incrociate.",
+        "replaced_item": "Oggetto sostituito",
+        "replaced_item_description": "Oggetto sostituito da un altro nell'API. Ha lo stesso hash dell'oggetto attuale. L'immagine originale è stata ripristinata da fonti esterne incrociate.",
         "secret_item": "Oggetto segreto",
         "secret_item_description": "Oggetto impostato direttamente come classificato nell'API. Ne rimangono solo i riferimenti. Al momento non sono disponibili informazioni.",
         "public_only": "Solo pubbliche",
@@ -50,7 +56,10 @@
     "emblems": {
         "title": "Emblemi",
         "search_placeholder": "Nome dell'emblema...",
-        "results_count": "{count} emblemi trovati | {count} emblema trovato"
+        "results_count": "{count} emblemi trovati | {count} emblema trovato",
+        "empty_state": "Nessun emblema corrisponde a questi criteri.",
+        "description_label": "Descrizione",
+        "hash_label": "Hash"
     },
     "consumables": {
         "title": "Consumabili",

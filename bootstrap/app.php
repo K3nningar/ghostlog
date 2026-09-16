@@ -21,6 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withCommands([
     __DIR__.'/../routes/console.php',
+    __DIR__.'/../app/Console/Commands',
     ])
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
