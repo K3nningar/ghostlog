@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class ShipController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $locale = $request->session()->get('locale', 'fr');
         $ships = Item::where('category_slug', 'ships')
-            ->where('locale', 'fr')
+            ->where('locale', $locale)
             ->orderBy('hash', 'asc')
             ->get([
                 'id',

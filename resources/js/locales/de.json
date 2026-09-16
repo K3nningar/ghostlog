@@ -1,41 +1,84 @@
 {
     "layout": {
-    "language": "de.language"
+        "language": "Sprache",
+        "app_description": "Das ultimative Archiv der Destiny-1-API.",
+        "app_description_line2" : "Finden Sie alle Waffen, Rüstungen und kosmetischen Gegenstände aus Destiny 1, für die Ewigkeit bewahrt.",
+        "archived_items": "{count} archivierte Objekte",
+        "footer_copyright": "GhostLog — Inoffizielles Destiny-1-API-Archiv © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright_bungie": "Daten © Bungie Inc."
+    },
+
+    "items": {
+        "search_label": "Suche",
+        "rarity_label": "Seltenheit",
+        "rarity_all": "Alle",
+        "rarity_exotic": "Exotisch",
+        "rarity_legendary": "Legendär",
+        "rarity_rare": "Selten",
+        "rarity_uncommon": "Ungewöhnlich",
+        "rarity_basic": "Gewöhnlich",
+        "confidentiality_label": "Vertraulichkeit",
+        "confidentiality_all": "Alle",
+        "sort_label": "Sortieren nach",
+        "classified_only": "Nur klassifizierte",
+        "classified_item": "Klassifiziertes Objekt",
+        "classified_item_description": "Von Bungie als vertraulich eingestuftes, der Community jedoch bekanntes Objekt. Es wurde anhand mehrerer externer Quellen rekonstruiert.",
+        "secret_item": "Geheimes Objekt",
+        "secret_item_description": "Objekt, das in der API direkt als vertraulich eingestuft wurde. Nur seine Referenzen sind erhalten geblieben. Derzeit sind keine Informationen verfügbar.",
+        "public_only": "Nur öffentliche",
+        "reset": "Zurücksetzen"
+    },
+
+    "weapons": {
+        "title": "Waffen",
+        "search_placeholder": "Name der Waffe...",
+        "results_count": "{count} Waffe gefunden | {count} Waffen gefunden"
+    },
+
+    "armors": {
+        "title": "Rüstungen",
+        "search_placeholder": "Name der Rüstung...",
+        "results_count": "{count} Stück Rüstung gefunden | {count} Stücke Rüstung gefunden"
+    },
+
+    "ships": {
+        "title": "Schiffe",
+        "search_placeholder": "Name des Schiffes...",
+        "results_count": "{count} Schiff gefunden | {count} Schiffe gefunden"
     },
 
     "sparrows": {
-        "title": "de.sparrows",
-        "search_label": "de.search_label",
-        "search_placeholder": "de.search_placeholder",
-        "rarity_label": "de.rarity_label",
-        "rarity_exotic": "de.rarity_exotic",
-        "rarity_legendary": "de.rarity_legendary",
-        "rarity_rare": "de.rarity_rare",
-        "rarity_uncommon": "de.rarity_uncommon",
-        "rarity_basic": "de.rarity_basic",
-        "rarity_all": "de.rarity_all",
-        "confidentiality_label": "de.confidentiality_label",
-        "classified_only": "de.classified_only",
-        "classified_item": "de.classified_item",
-        "classified_item_description": "de.classified_item_description",
-        "public_only": "de.public_only",
-        "confidentiality_all": "de.confidentiality_all",
-        "reset": "de.reset",
-        "results_count": "{count} de.sparrows found | {count} de.sparrow found"
+        "title": "Sparrows",
+        "search_placeholder": "Name des Sparrows...",
+        "results_count": "{count} Sparrow gefunden | {count} Sparrows gefunden"
     },
+
+    "emblems": {
+        "title": "Abzeichen",
+        "search_placeholder": "Name des Abzeichens...",
+        "results_count": "{count} Abzeichen gefunden | {count} Abzeichen gefunden"
+    },
+
+    "consumables": {
+        "title": "Verbrauchsgegenstände",
+        "search_placeholder": "Name des Verbrauchsgegenstands...",
+        "results_count": "{count} Verbrauchsgegenstand gefunden | {count} Verbrauchsgegenstände gefunden"
+    },
+
     "drawer": {
-        "no_icon": "de.no_icon",
-        "confidential": "de.confidential",
-        "other_languages": "de.other_languages",
-        "view_in_game": "de.view_in_game",
-        "close": "de.close"
+        "no_icon": "Kein Symbol verfügbar",
+        "confidential": "Klassifiziert",
+        "other_languages": "Andere verfügbare Sprachen",
+        "view_in_game": "Im Spiel anzeigen",
+        "close": "Schließen"
     },
+
     "categories": {
-        "weapons": "de.weapons",
-        "armors": "de.armors",
-        "ships": "de.ships",
-        "sparrows": "de.sparrows",
-        "emblems": "de.emblems",
-        "consumables": "de.consumables"
+        "weapons": "Waffen",
+        "armors": "Rüstungen",
+        "ships": "Schiffe",
+        "sparrows": "Sparrows",
+        "emblems": "Abzeichen",
+        "consumables": "Verbrauchsgegenstände"
     }
 }

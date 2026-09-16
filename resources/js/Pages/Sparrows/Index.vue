@@ -6,7 +6,7 @@
             <!-- Filtres -->
             <div class="flex flex-wrap gap-4 mb-6 bg-gray-800 p-4 rounded-lg">
                 <div class="flex-1 min-w-[200px]">
-                    <label class="block text-xs text-gray-400 mb-1">{{ $t('sparrows.search_label') }}</label>
+                    <label class="block text-xs text-gray-400 mb-1">{{ $t('items.search_label') }}</label>
                     <input
                         v-model="search"
                         type="text"
@@ -16,12 +16,12 @@
                 </div>
 
                 <div class="min-w-[180px]">
-                    <label class="block text-xs text-gray-400 mb-1">{{ $t('sparrows.rarity_label') }}</label>
+                    <label class="block text-xs text-gray-400 mb-1">{{ $t('items.rarity_label') }}</label>
                     <select
                         v-model="tierFilter"
                         class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
                     >
-                        <option value="">{{ $t('sparrows.rarity_all') }}</option>
+                        <option value="">{{ $t('items.rarity_all') }}</option>
                         <option v-for="tier in availableTiers" :key="tier" :value="tier">
                             {{ tier }}
                         </option>
@@ -29,19 +29,19 @@
                 </div>
 
                 <div class="min-w-[180px]">
-                    <label class="block text-xs text-gray-400 mb-1">{{ $t('sparrows.confidentiality_label') }}</label>
+                    <label class="block text-xs text-gray-400 mb-1">{{ $t('items.confidentiality_label') }}</label>
                     <select
                         v-model="confidentialFilter"
                         class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
                     >
-                        <option value="">{{ $t('sparrows.confidentiality_all') }}</option>
-                        <option value="classified">{{ $t('sparrows.classified_only') }}</option>
-                        <option value="public">{{ $t('sparrows.public_only') }}</option>
+                        <option value="">{{ $t('items.confidentiality_all') }}</option>
+                        <option value="classified">{{ $t('items.classified_only') }}</option>
+                        <option value="public">{{ $t('items.public_only') }}</option>
                     </select>
                 </div>
 
                 <div class="min-w-[180px]">
-                    <label class="block text-xs text-gray-400 mb-1">{{ $t('sparrows.sort_label') }}</label>
+                    <label class="block text-xs text-gray-400 mb-1">{{ $t('items.sort_label') }}</label>
                     <select
                         v-model="sortBy"
                         class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
@@ -57,7 +57,7 @@
                         @click="resetFilters"
                         class="text-sm text-gray-400 hover:text-white underline px-2 py-2"
                     >
-                        Réinitialiser
+                        {{ $t('items.reset') }}
                     </button>
                 </div>
             </div>
@@ -81,19 +81,19 @@
                             v-if="sparrow.subcategory_slug === 'secret'"
                             class="text-[10px] bg-purple-700 text-white px-1.5 py-0.5 rounded font-semibold"
                         >
-                            {{ $t('sparrows.secret_item') }}
+                            {{ $t('items.secret_item') }}
                         </span>
                         <span
                             v-if="sparrow.subcategory_slug === 'censored'"
                             class="text-[10px] bg-red-700 text-white px-1.5 py-0.5 rounded font-semibold"
                         >
-                            {{ $t('sparrows.censored_item') }}
+                            {{ $t('items.censored_item') }}
                         </span>
                         <span
                             v-if="sparrow.subcategory_slug === 'classified'"
                             class="text-[10px] bg-orange-700 text-white px-1.5 py-0.5 rounded font-semibold"
                         >
-                            {{ $t('sparrows.classified_item') }}
+                            {{ $t('items.classified_item') }}
                         </span>
                     </div>
 

@@ -3,53 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-    /**
-     * Regroupement des item_type_name par catégorie affichée sur la home.
-     */
-    private const TYPE_GROUPS = [
-        'weapons' => [
-            "Fusil d'éclaireur",
-            'Revolver',
-            'Fusil de précision',
-            'Fusil automatique',
-            'Fusil à fusion',
-            'Fusil à pompe',
-            'Fusil à impulsion',
-        ],
-        'armors' => [
-            'Casque',
-            'Ceinture de Titan',
-            'Armure de torse',
-            'Armure de jambe',
-            'Gantelets',
-        ],
-        'ships' => [
-            'Vaisseau',
-            'Schémas de vaisseau',
-        ],
-        'sparrows' => [
-            'Véhicule',
-        ],
-        'emblems' => [
-            'Emblème',
-        ],
-        'consumables' => [
-            'Objet à usage unique',
-            'Matériau',
-            'Colis',
-        ],
-    ];
-
-    public function index()
+    public function index(Request $request)
     {
-        $stats = Cache::remember('home_stats', now()->addHours(24), function () {
-            return $this->computeStats();
-        });
+        $locale = $request->session()->get('locale', 'fr');
+        $stats = $this->computeStats($locale);
 
         return Inertia::render('Home', [
             'stats' => $stats,
@@ -57,23 +19,39 @@ class HomeController extends Controller
     }
 
     /**
-     * Calcule les statistiques par catégorie en une seule requête SQL,
-     * au lieu de 6 requêtes COUNT() séparées.
+     * Calcule les statistiques sur le même périmètre que les pages de catégories.
      */
-    private function computeStats(): array
+    private function computeStats(string $locale): array
     {
-        $counts = Item::selectRaw('item_type_name, COUNT(*) as total')
-            ->whereNotNull('item_type_name')
-            ->groupBy('item_type_name')
-            ->pluck('total', 'item_type_name');
-
-        $stats = [];
-
-        foreach (self::TYPE_GROUPS as $key => $types) {
-            $stats[$key] = collect($types)
-                ->sum(fn (string $type) => $counts[$type] ?? 0);
-        }
-
-        return $stats;
+        return Item::query()
+            ->where('locale', $locale)
+            ->whereIn('category_slug', [
+                'weapons',
+                'armors',
+                'ships',
+                'sparrows',
+                'emblems',
+                'consumables',
+            ])
+            ->selectRaw('category_slug, COUNT(*) as total')
+            ->groupBy('category_slug')
+            ->pluck('total', 'category_slug')
+            ->union([
+                'weapons' => 0,
+                'armors' => 0,
+                'ships' => 0,
+                'sparrows' => 0,
+                'emblems' => 0,
+                'consumables' => 0,
+            ])
+            ->only([
+                'weapons',
+                'armors',
+                'ships',
+                'sparrows',
+                'emblems',
+                'consumables',
+            ])
+            ->all();
     }
 }

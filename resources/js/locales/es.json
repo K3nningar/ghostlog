@@ -1,41 +1,75 @@
 {
     "layout": {
-    "language": "es.language"
+        "language": "Idioma",
+        "app_description": "El archivo definitivo de la API de Destiny 1.",
+        "app_description_line2": "Encuentra todas las armas, armaduras y objetos cosméticos de Destiny 1, conservados para la eternidad.",
+        "archived_items": "{count} objetos archivados",
+        "footer_copyright": "GhostLog — Archivo no oficial de la API de Destiny 1 © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright_bungie": "Datos © Bungie Inc."
     },
-
+    "items": {
+        "search_label": "Buscar",
+        "rarity_label": "Rareza",
+        "rarity_all": "Todas",
+        "rarity_exotic": "Exótica",
+        "rarity_legendary": "Legendaria",
+        "rarity_rare": "Rara",
+        "rarity_uncommon": "Poco común",
+        "rarity_basic": "Básica",
+        "confidentiality_label": "Confidencialidad",
+        "confidentiality_all": "Todas",
+        "sort_label": "Ordenar por",
+        "classified_only": "Solo clasificadas",
+        "classified_item": "Objeto clasificado",
+        "classified_item_description": "Objeto clasificado por Bungie, pero conocido por la comunidad. Se ha restaurado a partir de fuentes externas contrastadas.",
+        "secret_item": "Objeto secreto",
+        "secret_item_description": "Objeto marcado directamente como clasificado en la API. Solo quedan sus referencias. No hay información disponible por el momento.",
+        "public_only": "Solo públicas",
+        "reset": "Restablecer"
+    },
+    "weapons": {
+        "title": "Armas",
+        "search_placeholder": "Nombre del arma...",
+        "results_count": "{count} armas encontradas | {count} arma encontrada"
+    },
+    "armors": {
+        "title": "Armaduras",
+        "search_placeholder": "Nombre de la armadura...",
+        "results_count": "{count} piezas de armadura encontradas | {count} pieza de armadura encontrada"
+    },
+    "ships": {
+        "title": "Naves",
+        "search_placeholder": "Nombre de la nave...",
+        "results_count": "{count} naves encontradas | {count} nave encontrada"
+    },
     "sparrows": {
-        "title": "es.sparrows",
-        "search_label": "es.search_label",
-        "search_placeholder": "es.search_placeholder",
-        "rarity_label": "es.rarity_label",
-        "rarity_exotic": "es.rarity_exotic",
-        "rarity_legendary": "es.rarity_legendary",
-        "rarity_rare": "es.rarity_rare",
-        "rarity_uncommon": "es.rarity_uncommon",
-        "rarity_basic": "es.rarity_basic",
-        "rarity_all": "es.rarity_all",
-        "confidentiality_label": "es.confidentiality_label",
-        "classified_only": "es.classified_only",
-        "classified_item": "es.classified_item",
-        "classified_item_description": "es.classified_item_description",
-        "public_only": "es.public_only",
-        "confidentiality_all": "es.confidentiality_all",
-        "reset": "es.reset",
-        "results_count": "{count} es.sparrows found | {count} es.sparrow found"
+        "title": "Colibríes",
+        "search_placeholder": "Nombre del colibrí...",
+        "results_count": "{count} colibríes encontrados | {count} colibrí encontrado"
+    },
+    "emblems": {
+        "title": "Emblemas",
+        "search_placeholder": "Nombre del emblema...",
+        "results_count": "{count} emblemas encontrados | {count} emblema encontrado"
+    },
+    "consumables": {
+        "title": "Consumibles",
+        "search_placeholder": "Nombre del consumible...",
+        "results_count": "{count} consumibles encontrados | {count} consumible encontrado"
     },
     "drawer": {
-        "no_icon": "es.no_icon",
-        "confidential": "es.confidential",
-        "other_languages": "es.other_languages",
-        "view_in_game": "es.view_in_game",
-        "close": "es.close"
+        "no_icon": "No hay icono disponible",
+        "confidential": "Clasificado",
+        "other_languages": "Otros idiomas disponibles",
+        "view_in_game": "Ver en el juego",
+        "close": "Cerrar"
     },
     "categories": {
-        "weapons": "es.weapons",
-        "armors": "es.armors",
-        "ships": "es.ships",
-        "sparrows": "es.sparrows",
-        "emblems": "es.emblems",
-        "consumables": "es.consumables"
+        "weapons": "Armas",
+        "armors": "Armaduras",
+        "ships": "Naves",
+        "sparrows": "Colibríes",
+        "emblems": "Emblemas",
+        "consumables": "Consumibles"
     }
 }

@@ -40,15 +40,26 @@
                     </svg>
                 </button>
 
-                <!-- Image en haut -->
+                <!-- Média en haut -->
                 <div class="relative h-64 w-full bg-neutral-800">
                     <img
-                        v-if="ship.ingame_image_path"
+                        v-if="ship.ingame_image_path && !isVideoPath(ship.ingame_image_path)"
                         :src="ship.ingame_image_path"
                         :alt="ship.name"
                         class="h-full w-full object-cover cursor-pointer"
                         @click="openImageModal"
                     />
+                    <video
+                        v-else-if="ship.ingame_image_path"
+                        :src="ship.ingame_image_path"
+                        :aria-label="ship.name"
+                        class="h-full w-full object-cover cursor-pointer"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        @click.self="openImageModal"
+                    ></video>
                     <div
                         v-else
                         class="flex h-full w-full items-center justify-center text-neutral-500"
@@ -150,7 +161,7 @@
         </Transition>
     </Teleport>
 
-    <!-- Modale image en jeu -->
+    <!-- Modale média en jeu -->
     <Transition name="fade">
         <div
             v-if="isImageModalOpen"
@@ -165,11 +176,23 @@
                 ✕
             </button>
             <img
+                v-if="ship?.ingame_image_path && !isVideoPath(ship.ingame_image_path)"
                 :src="ship?.ingame_image_path"
                 :alt="ship?.name"
                 class="max-h-[90vh] max-w-[90vw] object-contain rounded shadow-2xl"
                 @click.stop
             />
+            <video
+                v-else-if="ship?.ingame_image_path"
+                :src="ship.ingame_image_path"
+                :aria-label="ship.name"
+                class="max-h-[90vh] max-w-[90vw] rounded shadow-2xl"
+                autoplay
+                loop
+                muted
+                playsinline
+                @click.stop
+            ></video>
         </div>
     </Transition>
 </template>
@@ -209,6 +232,10 @@ function openImageModal() {
 
 function closeImageModal() {
     isImageModalOpen.value = false;
+}
+
+function isVideoPath(path) {
+    return /\.(mp4|webm|ogg|ogv|mov|m4v)(?:$|[?#])/i.test(path);
 }
 
 async function fetchTranslations(hash) {

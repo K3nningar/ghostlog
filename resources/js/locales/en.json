@@ -1,12 +1,15 @@
 {
     "layout": {
-    "language": "Language"
+        "language": "Language",
+        "app_description": "The ultimate archive of the Destiny 1 API.",
+        "app_description_line2" : "Find all the weapons, armor, and cosmetic items from Destiny 1, preserved for eternity.",
+        "archived_items": "{count} archived items",
+        "footer_copyright": "GhostLog — Unofficial Destiny 1 API Archive © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright_bungie": "Data © Bungie Inc."
     },
 
-    "sparrows": {
-        "title": "Sparrows",
+    "items": {
         "search_label": "Search",
-        "search_placeholder": "Sparrow name...",
         "rarity_label": "Rarity",
         "rarity_all": "All",
         "rarity_exotic": "Exotic",
@@ -20,10 +23,48 @@
         "classified_only": "Classified only",
         "classified_item": "Classified item",
         "classified_item_description": "Item made classified by Bungie, but known to the community. It has been restored from cross-referenced external sources.",
+        "secret_item": "Secret item",
+        "secret_item_description": "Item that has been directly set as classified in the API. Only its references remain. No information is available at this time.",
         "public_only": "Public only",
-        "reset": "Reset",
+        "reset": "Reset"
+    },
+
+    "weapons": {
+        "title": "Weapons",
+        "search_placeholder": "Weapon name...",
+        "results_count": "{count} weapons found | {count} weapon found"
+    },
+
+    "armors": {
+        "title": "Armor",
+        "search_placeholder": "Armor name...",
+        "results_count": "{count} armor pieces found | {count} armor piece found"
+    },
+
+    "ships": {
+        "title": "Ships",
+        "search_placeholder": "Ship name...",
+        "results_count": "{count} ships found | {count} ship found"
+    },
+
+    "sparrows": {
+        "title": "Sparrows",
+        "search_placeholder": "Sparrow name...",
         "results_count": "{count} sparrows found | {count} sparrow found"
     },
+
+    "emblems": {
+        "title": "Emblems",
+        "search_placeholder": "Emblem name...",
+        "results_count": "{count} emblems found | {count} emblem found"
+    },
+
+    "consumables": {
+        "title": "Consumables",
+        "search_placeholder": "Consumable name...",
+        "results_count": "{count} consumables found | {count} consumable found"
+    },
+
 
     "drawer": {
         "no_icon": "No icon",

@@ -1,41 +1,75 @@
 {
     "layout": {
-    "language": "it.language"
+        "language": "Lingua",
+        "app_description": "L'archivio definitivo dell'API di Destiny 1.",
+        "app_description_line2": "Trova tutte le armi, le armature e gli oggetti cosmetici di Destiny 1, conservati per l'eternità.",
+        "archived_items": "{count} oggetti archiviati",
+        "footer_copyright": "GhostLog — Archivio non ufficiale dell'API di Destiny 1 © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright_bungie": "Dati © Bungie Inc."
     },
-
+    "items": {
+        "search_label": "Cerca",
+        "rarity_label": "Rarità",
+        "rarity_all": "Tutte",
+        "rarity_exotic": "Esotica",
+        "rarity_legendary": "Leggendaria",
+        "rarity_rare": "Rara",
+        "rarity_uncommon": "Non comune",
+        "rarity_basic": "Comune",
+        "confidentiality_label": "Riservatezza",
+        "confidentiality_all": "Tutte",
+        "sort_label": "Ordina per",
+        "classified_only": "Solo classificate",
+        "classified_item": "Oggetto classificato",
+        "classified_item_description": "Oggetto classificato da Bungie, ma noto alla comunità. È stato ripristinato utilizzando fonti esterne incrociate.",
+        "secret_item": "Oggetto segreto",
+        "secret_item_description": "Oggetto impostato direttamente come classificato nell'API. Ne rimangono solo i riferimenti. Al momento non sono disponibili informazioni.",
+        "public_only": "Solo pubbliche",
+        "reset": "Reimposta"
+    },
+    "weapons": {
+        "title": "Armi",
+        "search_placeholder": "Nome dell'arma...",
+        "results_count": "{count} armi trovate | {count} arma trovata"
+    },
+    "armors": {
+        "title": "Armature",
+        "search_placeholder": "Nome dell'armatura...",
+        "results_count": "{count} pezzi di armatura trovati | {count} pezzo di armatura trovato"
+    },
+    "ships": {
+        "title": "Navi",
+        "search_placeholder": "Nome della nave...",
+        "results_count": "{count} navi trovate | {count} nave trovata"
+    },
     "sparrows": {
-        "title": "it.sparrows",
-        "search_label": "it.search_label",
-        "search_placeholder": "it.search_placeholder",
-        "rarity_label": "it.rarity_label",
-        "rarity_exotic": "it.rarity_exotic",
-        "rarity_legendary": "it.rarity_legendary",
-        "rarity_rare": "it.rarity_rare",
-        "rarity_uncommon": "it.rarity_uncommon",
-        "rarity_basic": "it.rarity_basic",
-        "rarity_all": "it.rarity_all",
-        "confidentiality_label": "it.confidentiality_label",
-        "classified_only": "it.classified_only",
-        "classified_item": "it.classified_item",
-        "classified_item_description": "it.classified_item_description",
-        "public_only": "it.public_only",
-        "confidentiality_all": "it.confidentiality_all",
-        "reset": "it.reset",
-        "results_count": "{count} it.sparrows found | {count} it.sparrow found"
+        "title": "Passeri",
+        "search_placeholder": "Nome del passero...",
+        "results_count": "{count} passeri trovati | {count} passero trovato"
+    },
+    "emblems": {
+        "title": "Emblemi",
+        "search_placeholder": "Nome dell'emblema...",
+        "results_count": "{count} emblemi trovati | {count} emblema trovato"
+    },
+    "consumables": {
+        "title": "Consumabili",
+        "search_placeholder": "Nome del consumabile...",
+        "results_count": "{count} consumabili trovati | {count} consumabile trovato"
     },
     "drawer": {
-        "no_icon": "it.no_icon",
-        "confidential": "it.confidential",
-        "other_languages": "it.other_languages",
-        "view_in_game": "it.view_in_game",
-        "close": "it.close"
+        "no_icon": "Nessuna icona disponibile",
+        "confidential": "Classificato",
+        "other_languages": "Altre lingue disponibili",
+        "view_in_game": "Visualizza nel gioco",
+        "close": "Chiudi"
     },
     "categories": {
-        "weapons": "it.weapons",
-        "armors": "it.armors",
-        "ships": "it.ships",
-        "sparrows": "it.sparrows",
-        "emblems": "it.emblems",
-        "consumables": "it.consumables"
+        "weapons": "Armi",
+        "armors": "Armature",
+        "ships": "Navi",
+        "sparrows": "Passeri",
+        "emblems": "Emblemi",
+        "consumables": "Consumabili"
     }
 }

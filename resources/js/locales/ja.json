@@ -1,41 +1,75 @@
 {
     "layout": {
-    "language": "ja.language"
+        "language": "言語",
+        "app_description": "Destiny 1 APIの究極のアーカイブ。",
+        "app_description_line2": "Destiny 1のすべての武器、防具、コスメティックアイテムを永遠に保存しています。",
+        "archived_items": "{count}個のアイテムをアーカイブ",
+        "footer_copyright": "GhostLog — 非公式Destiny 1 APIアーカイブ © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright_bungie": "データ © Bungie Inc."
     },
-
+    "items": {
+        "search_label": "検索",
+        "rarity_label": "レアリティ",
+        "rarity_all": "すべて",
+        "rarity_exotic": "エキゾチック",
+        "rarity_legendary": "レジェンダリー",
+        "rarity_rare": "レア",
+        "rarity_uncommon": "アンコモン",
+        "rarity_basic": "ベーシック",
+        "confidentiality_label": "機密性",
+        "confidentiality_all": "すべて",
+        "sort_label": "並べ替え",
+        "classified_only": "分類済みのみ",
+        "classified_item": "分類済みアイテム",
+        "classified_item_description": "Bungieによって機密扱いにされたものの、コミュニティには知られているアイテムです。外部の複数の情報源を照合して復元されています。",
+        "secret_item": "秘密のアイテム",
+        "secret_item_description": "APIで直接機密扱いに設定されたアイテムです。残っているのは参照情報だけで、現時点では情報がありません。",
+        "public_only": "公開済みのみ",
+        "reset": "リセット"
+    },
+    "weapons": {
+        "title": "武器",
+        "search_placeholder": "武器名...",
+        "results_count": "{count}個の武器が見つかりました | {count}個の武器が見つかりました"
+    },
+    "armors": {
+        "title": "防具",
+        "search_placeholder": "防具名...",
+        "results_count": "{count}個の防具が見つかりました | {count}個の防具が見つかりました"
+    },
+    "ships": {
+        "title": "シップ",
+        "search_placeholder": "シップ名...",
+        "results_count": "{count}隻のシップが見つかりました | {count}隻のシップが見つかりました"
+    },
     "sparrows": {
-        "title": "ja.sparrows",
-        "search_label": "ja.search_label",
-        "search_placeholder": "ja.search_placeholder",
-        "rarity_label": "ja.rarity_label",
-        "rarity_exotic": "ja.rarity_exotic",
-        "rarity_legendary": "ja.rarity_legendary",
-        "rarity_rare": "ja.rarity_rare",
-        "rarity_uncommon": "ja.rarity_uncommon",
-        "rarity_basic": "ja.rarity_basic",
-        "rarity_all": "ja.rarity_all",
-        "confidentiality_label": "ja.confidentiality_label",
-        "classified_only": "ja.classified_only",
-        "public_only": "ja.public_only",
-        "classified_item": "ja.classified_item",
-        "classified_item_description": "ja.classified_item_description",
-        "confidentiality_all": "ja.confidentiality_all",
-        "reset": "ja.reset",
-        "results_count": "{count} ja.sparrows found | {count} ja.sparrow found"
+        "title": "スパロー",
+        "search_placeholder": "スパロー名...",
+        "results_count": "{count}台のスパローが見つかりました | {count}台のスパローが見つかりました"
+    },
+    "emblems": {
+        "title": "エンブレム",
+        "search_placeholder": "エンブレム名...",
+        "results_count": "{count}個のエンブレムが見つかりました | {count}個のエンブレムが見つかりました"
+    },
+    "consumables": {
+        "title": "消耗品",
+        "search_placeholder": "消耗品名...",
+        "results_count": "{count}個の消耗品が見つかりました | {count}個の消耗品が見つかりました"
     },
     "drawer": {
-        "no_icon": "ja.no_icon",
-        "confidential": "ja.confidential",
-        "other_languages": "ja.other_languages",
-        "view_in_game": "ja.view_in_game",
-        "close": "ja.close"
+        "no_icon": "アイコンなし",
+        "confidential": "機密",
+        "other_languages": "その他の対応言語",
+        "view_in_game": "ゲーム内で表示",
+        "close": "閉じる"
     },
     "categories": {
-        "weapons": "ja.weapons",
-        "armors": "ja.armors",
-        "ships": "ja.ships",
-        "sparrows": "ja.sparrows",
-        "emblems": "ja.emblems",
-        "consumables": "ja.consumables"
+        "weapons": "武器",
+        "armors": "防具",
+        "ships": "シップ",
+        "sparrows": "スパロー",
+        "emblems": "エンブレム",
+        "consumables": "消耗品"
     }
 }

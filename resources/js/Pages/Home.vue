@@ -7,12 +7,12 @@ defineProps({
 });
 
 const categories = [
-    { key: 'weapons', name: 'Armes', image: '/img/menus/weapons.jpg' },
-    { key: 'armors', name: 'Armures', image: '/img/menus/armors.jpg' },
-    { key: 'ships', name: 'Vaisseaux', image: '/img/menus/ships.jpg' },
-    { key: 'sparrows', name: 'Passereaux', image: '/img/menus/sparrows.jpg' },
-    { key: 'emblems', name: 'Emblèmes', image: '/img/menus/emblems.jpg' },
-    { key: 'consumables', name: 'Consommables', image: '/img/menus/consumables.jpg' },
+    { key: 'weapons', image: '/img/menus/weapons.jpg' },
+    { key: 'armors', image: '/img/menus/armors.jpg' },
+    { key: 'ships', image: '/img/menus/ships.jpg' },
+    { key: 'sparrows', image: '/img/menus/sparrows.jpg' },
+    { key: 'emblems', image: '/img/menus/emblems.jpg' },
+    { key: 'consumables', image: '/img/menus/consumables.jpg' },
 ];
 
 const categoryPaths = {
@@ -35,8 +35,7 @@ const categoryPaths = {
                     D1 Ghost<span class="text-sky-400">Log</span>
                 </h1>
                 <p class="text-gray-400 max-w-4xl mx-auto text-lg">
-                    L'archive ultime de l'API Destiny 1. <br><br>Retrouvez tout l'arsenal, les armures et les objets cosmétiques de Destiny 1,
-                    conservés pour l'éternité.
+                    {{ $t('layout.app_description') }} <br><br>{{ $t('layout.app_description_line2') }}
                 </p>
             </section>
 
@@ -60,10 +59,10 @@ const categoryPaths = {
                         <!-- Contenu -->
                         <div class="relative z-10">
                             <h3 class="text-lg font-semibold mb-1 text-white group-hover:text-sky-400 transition">
-                                {{ category.name }}
+                                {{ $t(`categories.${category.key}`) }}
                             </h3>
                             <p class="text-sm text-gray-300">
-                                {{ stats[category.key] ?? 0 }} objets archivés
+                                {{ $t('layout.archived_items', { count: stats[category.key] ?? 0 }) }}
                             </p>
                         </div>
                     </Link>
@@ -73,8 +72,8 @@ const categoryPaths = {
             <!-- Footer -->
             <footer class="border-t border-gray-800 py-8">
                 <div class="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm text-gray-500">
-                    <p>GhostLog — Archive API non-officielle Destiny 1 © Nicolas BOUTINAUD / K3nningar</p>
-                    <p>Données © Bungie Inc.</p>
+                    <p>{{ $t('layout.footer_copyright') }}</p>
+                    <p>{{ $t('layout.footer_copyright_bungie') }}</p>
                 </div>
             </footer>
         </div>

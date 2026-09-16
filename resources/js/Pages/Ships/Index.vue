@@ -6,17 +6,17 @@
             <!-- Filtres -->
             <div class="flex flex-wrap gap-4 mb-6 bg-gray-800 p-4 rounded-lg">
                 <div class="flex-1 min-w-[200px]">
-                    <label class="block text-xs text-gray-400 mb-1">Recherche</label>
+                    <label class="block text-xs text-gray-400 mb-1">{{ $t('items.search_label') }}</label>
                     <input
                         v-model="search"
                         type="text"
-                        placeholder="Nom du vaisseau..."
+                        :placeholder="$t('ships.search_placeholder')"
                         class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
                     />
                 </div>
 
                 <div class="min-w-[180px]">
-                    <label class="block text-xs text-gray-400 mb-1">Rareté</label>
+                    <label class="block text-xs text-gray-400 mb-1">{{ $t('items.rarity_label') }}</label>
                     <select
                         v-model="tierFilter"
                         class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
@@ -29,19 +29,19 @@
                 </div>
 
                 <div class="min-w-[180px]">
-                    <label class="block text-xs text-gray-400 mb-1">Confidentialité</label>
+                    <label class="block text-xs text-gray-400 mb-1">{{ $t('items.confidentiality_label') }}</label>
                     <select
                         v-model="confidentialFilter"
                         class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
                     >
                         <option value="">Tous</option>
-                        <option value="confidential">Confidentiels uniquement</option>
-                        <option value="public">Publics uniquement</option>
+                        <option value="confidential">{{ $t('items.classified_only') }}</option>
+                        <option value="public">{{ $t('items.public_only') }}</option>
                     </select>
                 </div>
 
                 <div class="min-w-[180px]">
-                    <label class="block text-xs text-gray-400 mb-1">{{ $t('ships.sort_label') }}</label>
+                    <label class="block text-xs text-gray-400 mb-1">{{ $t('items.sort_label') }}</label>
                     <select
                         v-model="sortBy"
                         class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
@@ -57,7 +57,7 @@
                         @click="resetFilters"
                         class="text-sm text-gray-400 hover:text-white underline px-2 py-2"
                     >
-                        Réinitialiser
+                        {{ $t('items.reset') }}
                     </button>
                 </div>
             </div>
