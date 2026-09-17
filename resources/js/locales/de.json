@@ -1,6 +1,9 @@
 {
     "layout": {
         "language": "Sprache",
+        "archive": "Archiv",
+        "archive_index": "Archivindex",
+        "records": "{count} Einträge",
         "app_description": "Das ultimative Archiv der Destiny-1-API.",
         "app_description_line2" : "Finden Sie alle Waffen, Rüstungen und kosmetischen Gegenstände aus Destiny 1, für die Ewigkeit bewahrt.",
         "archived_items": "{count} archivierte Objekte",

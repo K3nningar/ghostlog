@@ -27,41 +27,48 @@ const categoryPaths = {
 
 <template>
     <AppLayout>
-        <div class="min-h-screen bg-gray-950 text-gray-100">
+        <div class="min-h-screen bg-[var(--dm-background)] text-[var(--dm-text)]">
 
             <!-- Hero -->
-            <section class="max-w-7xl mx-auto px-6 py-24 text-center">
-                <h1 class="text-5xl font-bold mb-6">
-                    D1 Ghost<span class="text-sky-400">Log</span>
+            <section class="mx-auto max-w-7xl px-6 pb-20 pt-20 sm:pt-28">
+                <p class="mb-5 text-xs uppercase tracking-[0.28em] text-sky-300">Destiny 1 archive</p>
+                <h1 class="max-w-4xl text-5xl font-medium leading-[0.98] tracking-tight text-white sm:text-7xl">
+                    D1 Ghost<span class="text-sky-300">Log</span>
                 </h1>
-                <p class="text-gray-400 max-w-4xl mx-auto text-lg">
-                    {{ $t('layout.app_description') }} <br><br>{{ $t('layout.app_description_line2') }}
+                <p class="mt-8 max-w-2xl text-base leading-8 text-white/60 sm:text-lg">
+                    {{ $t('layout.app_description') }} {{ $t('layout.app_description_line2') }}
                 </p>
             </section>
 
             <!-- Categories -->
-            <section class="max-w-7xl mx-auto px-6 pb-24">
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <section class="mx-auto max-w-7xl px-6 pb-24">
+                <div class="mb-5 flex items-end justify-between border-b border-white/10 pb-4">
+                    <h2 class="text-xs uppercase tracking-[0.24em] text-white/50">{{ $t('layout.archive_index') }}</h2>
+                    <span class="text-xs text-white/35">{{ $t('layout.records', { count: Object.values(stats ?? {}).reduce((total, count) => total + count, 0) }) }}</span>
+                </div>
+                <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     <Link
                         v-for="category in categories"
                         :key="category.key"
                         :href="categoryPaths[category.key] ?? '#'"
-                        class="group relative overflow-hidden border border-gray-800 rounded-xl p-8 text-center hover:border-sky-400/50 transition h-48 flex flex-col justify-end"
-                        :style="{
-                            backgroundImage: `url(${category.image})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                        }"
+                        class="group relative flex h-48 flex-col justify-end overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-[var(--dm-accent)]/60"
                     >
+                        <img
+                            :src="category.image"
+                            :alt="$t(`categories.${category.key}`)"
+                            loading="lazy"
+                            decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover opacity-80 transition group-hover:opacity-100"
+                        />
                         <!-- Overlay sombre pour la lisibilité -->
-                        <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition"></div>
+                        <div class="absolute inset-0 bg-black/65 transition group-hover:bg-black/45"></div>
 
                         <!-- Contenu -->
                         <div class="relative z-10">
-                            <h3 class="text-lg font-semibold mb-1 text-white group-hover:text-sky-400 transition">
+                            <h3 class="mb-1 text-lg font-semibold text-white transition group-hover:text-sky-300">
                                 {{ $t(`categories.${category.key}`) }}
                             </h3>
-                            <p class="text-sm text-gray-300">
+                            <p class="text-sm text-white/55">
                                 {{ $t('layout.archived_items', { count: stats[category.key] ?? 0 }) }}
                             </p>
                         </div>
@@ -70,8 +77,8 @@ const categoryPaths = {
             </section>
 
             <!-- Footer -->
-            <footer class="border-t border-gray-800 py-8">
-                <div class="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm text-gray-500">
+            <footer class="border-t border-white/10 py-8">
+                <div class="mx-auto flex max-w-7xl flex-col gap-2 px-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
                     <p>{{ $t('layout.footer_copyright') }}</p>
                     <p>{{ $t('layout.footer_copyright_bungie') }}</p>
                 </div>

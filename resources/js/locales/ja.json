@@ -1,6 +1,9 @@
 {
     "layout": {
         "language": "言語",
+        "archive": "アーカイブ",
+        "archive_index": "アーカイブインデックス",
+        "records": "{count}件",
         "app_description": "Destiny 1 APIの究極のアーカイブ。",
         "app_description_line2": "Destiny 1のすべての武器、防具、コスメティックアイテムを永遠に保存しています。",
         "archived_items": "{count}個のアイテムをアーカイブ",

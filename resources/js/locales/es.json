@@ -1,6 +1,9 @@
 {
     "layout": {
         "language": "Idioma",
+        "archive": "Archivo",
+        "archive_index": "Índice del archivo",
+        "records": "{count} registros",
         "app_description": "El archivo definitivo de la API de Destiny 1.",
         "app_description_line2": "Encuentra todas las armas, armaduras y objetos cosméticos de Destiny 1, conservados para la eternidad.",
         "archived_items": "{count} objetos archivados",

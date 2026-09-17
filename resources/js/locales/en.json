@@ -1,6 +1,9 @@
 {
     "layout": {
         "language": "Language",
+        "archive": "Archive",
+        "archive_index": "Archive index",
+        "records": "{count} records",
         "app_description": "The ultimate archive of the Destiny 1 API.",
         "app_description_line2" : "Find all the weapons, armor, and cosmetic items from Destiny 1, preserved for eternity.",
         "archived_items": "{count} archived items",

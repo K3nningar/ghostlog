@@ -53,44 +53,38 @@ function changeLocale(event) {
 <template>
     <Head :title="title" />
 
-    <div class="min-h-screen bg-[var(--dm-background)] text-[var(--dm-text)]">
-        <header class="sticky top-0 z-30 border-b border-white/10 bg-[#101010]/90 px-5 py-4 backdrop-blur-xl sm:px-8">
-            <div class="mx-auto flex max-w-7xl items-center justify-between gap-4">
-                <Link href="/" class="group flex items-center gap-3">
-                    <img src="/img/logo/logo.png" alt="GhostLog Logo" class="h-9 w-9 rounded-lg opacity-90 transition group-hover:opacity-100" />
-                    <span class="text-base font-semibold tracking-[0.18em] text-white sm:text-lg">
-                        D1 <span class="text-[var(--dm-accent)]">GhostLog</span>
+    <div class="min-h-screen bg-gray-950">
+        <header class="flex items-center justify-between gap-2 border-b border-gray-800 bg-gray-900 px-6 py-3">
+            <!-- Logo to the left -->
+            <Link href="/" class="flex items-center gap-3">
+                <div class="flex items-center gap-3">
+                    <img src="/img/logo/logo.png" alt="GhostLog Logo" class="w-10 h-10" />
+                    <span class="text-xl font-semibold tracking-wide text-white">
+                        D1 Ghost<span class="text-sky-400">Log</span>
                     </span>
-                </Link>
-                <nav class="hidden items-center gap-6 text-xs uppercase tracking-[0.16em] text-white/50 md:flex">
-                    <Link href="/" class="transition hover:text-white">{{ $t('layout.archive') }}</Link>
-                    <Link href="/ships" class="transition hover:text-white">{{ $t('categories.ships') }}</Link>
-                    <Link href="/sparrows" class="transition hover:text-white">{{ $t('categories.sparrows') }}</Link>
-                    <Link href="/emblems" class="transition hover:text-white">{{ $t('categories.emblems') }}</Link>
-                </nav>
-                <div class="flex items-center gap-2">
-                    <label class="sr-only" for="locale-select">{{ $t('layout.language') }}</label>
+                </div>
+            </Link>    
+            <!-- Language selector to the right -->
+            <div class="flex items-center gap-2">
+                <label class="text-xs text-gray-400" for="locale-select">{{ $t('layout.language') }}</label>
                 <select
                     id="locale-select"
                     :value="currentLocale"
                     @change="changeLocale"
-                    class="rounded-lg border border-white/10 bg-[#151515] px-2 py-1.5 text-xs text-white outline-none transition focus:border-[var(--dm-accent)]"
-                    style="color-scheme: dark;"
+                    class="rounded border border-gray-700 bg-gray-800 px-2 py-1 text-sm text-white focus:border-blue-400 focus:outline-none"
                 >
                     <option
                         v-for="(label, code) in availableLocales"
                         :key="code"
                         :value="code"
-                        class="bg-[#151515] text-white"
                     >
                         {{ label }}
                     </option>
                 </select>
-                </div>
             </div>
         </header>
 
-        <main class="relative overflow-hidden">
+        <main>
             <slot />
         </main>
     </div>

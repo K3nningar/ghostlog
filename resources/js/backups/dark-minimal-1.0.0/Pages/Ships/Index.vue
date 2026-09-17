@@ -1,23 +1,17 @@
 <template>
     <AppLayout title="Vaisseaux">
-        <div class="mx-auto max-w-7xl px-5 py-10 text-sky-300 sm:px-8">
-            <div class="mb-8 flex items-end justify-between gap-4 border-b border-white/10 pb-5">
-                <div>
-                    <p class="mb-2 text-xs uppercase tracking-[0.24em] text-sky-300">{{ $t('layout.archive_index') }}</p>
-                    <h1 class="text-3xl font-medium tracking-tight text-white sm:text-4xl">{{ $t('ships.title') }}</h1>
-                </div>
-                <span class="text-xs text-white/40">{{ $t('layout.records', { count: filteredShips.length }) }}</span>
-            </div>
+        <div class="p-6">
+            <h1 class="text-2xl font-bold mb-6 text-white">Vaisseaux</h1>
 
             <!-- Filtres -->
-            <div class="mb-6 flex flex-wrap gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4">
+            <div class="flex flex-wrap gap-4 mb-6 bg-gray-800 p-4 rounded-lg">
                 <div class="flex-1 min-w-[200px]">
                     <label class="block text-xs text-gray-400 mb-1">{{ $t('items.search_label') }}</label>
                     <input
                         v-model="search"
                         type="text"
                         :placeholder="$t('ships.search_placeholder')"
-                        class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-text-sky-300"
+                        class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
                     />
                 </div>
 
@@ -25,7 +19,7 @@
                     <label class="block text-xs text-gray-400 mb-1">{{ $t('items.rarity_label') }}</label>
                     <select
                         v-model="tierFilter"
-                        class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-text-sky-300"
+                        class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
                     >
                         <option value="">Toutes</option>
                         <option v-for="tier in availableTiers" :key="tier" :value="tier">
@@ -38,7 +32,7 @@
                     <label class="block text-xs text-gray-400 mb-1">{{ $t('items.confidentiality_label') }}</label>
                     <select
                         v-model="confidentialFilter"
-                        class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-text-sky-300"
+                        class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
                     >
                         <option value="">Tous</option>
                         <option value="confidential">{{ $t('items.classified_only') }}</option>
@@ -50,7 +44,7 @@
                     <label class="block text-xs text-gray-400 mb-1">{{ $t('items.sort_label') }}</label>
                     <select
                         v-model="sortBy"
-                        class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-text-sky-300"
+                        class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
                     >
                         <option v-for="option in sortOptions" :key="option.value" :value="option.value">
                             {{ option.label }}
@@ -61,7 +55,7 @@
                 <div class="flex items-end">
                     <button
                         @click="resetFilters"
-                        class="px-2 py-2 text-sm text-white/50 underline transition hover:text-white"
+                        class="text-sm text-gray-400 hover:text-white underline px-2 py-2"
                     >
                         {{ $t('items.reset') }}
                     </button>
@@ -73,11 +67,11 @@
             </p>
 
             <!-- Grille unique -->
-            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-12 gap-4">
                 <div
                     v-for="ship in filteredShips"
                     :key="ship.id"
-                    class="group relative cursor-pointer rounded-xl border-2 bg-white/[0.03] p-3 transition hover:-translate-y-1 hover:bg-white/[0.06]"
+                    class="relative bg-gray-800 rounded-lg p-3 hover:bg-gray-700 transition cursor-pointer border"
                     :class="tierBorderClass(ship.tier_type_name)"
                     @click="openShipDetail(ship)"
                 >
@@ -96,7 +90,7 @@
                         v-if="ship.archive_icon_path"
                         :src="ship.archive_icon_path"
                         :alt="ship.name"
-                        class="mb-2 aspect-square w-full rounded-lg object-cover opacity-90 transition group-hover:opacity-100"
+                        class="w-full aspect-square object-cover rounded mb-2"
                     />
                     <div
                         v-else
@@ -105,8 +99,8 @@
                         Pas d'icône
                     </div>
 
-                    <p class="truncate text-sm font-semibold text-white">{{ ship.name }}</p>
-                    <p class="text-xs text-white/40">{{ ship.tier_type_name }}</p>
+                    <p class="text-sm text-white font-semibold truncate">{{ ship.name }}</p>
+                    <p class="text-xs text-gray-400">{{ ship.tier_type_name }}</p>
                 </div>
             </div>
 
@@ -232,23 +226,17 @@ function resetFilters() {
 }
 
 function tierBorderClass(tierName) {
-    switch (String(tierName).toLowerCase()) {
-        case '6':
-        case 'exotique':
+    switch (tierName) {
+        case 'Exotique':
             return 'border-yellow-500';
-        case '5':
-        case 'légendaire':
-        case 'legendary':
+        case 'Légendaire':
             return 'border-purple-500';
-        case '4':
-        case 'rare':
+        case 'Rare':
             return 'border-blue-500';
-        case '3':
-        case 'peu commun':
-        case 'uncommon':
+        case 'Peu commun':
             return 'border-green-500';
         default:
-            return 'border-white';
+            return 'border-gray-600';
     }
 }
 

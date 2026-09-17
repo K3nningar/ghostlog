@@ -1,34 +1,28 @@
 <template>
     <AppLayout :title="$t('emblems.title')">
-        <div class="mx-auto max-w-7xl px-5 py-10 text-sky-300 sm:px-8">
-            <div class="mb-8 flex items-end justify-between gap-4 border-b border-white/10 pb-5">
-                <div>
-                    <p class="mb-2 text-xs uppercase tracking-[0.24em] text-sky-300">{{ $t('layout.archive_index') }}</p>
-                    <h1 class="text-3xl font-medium tracking-tight text-white sm:text-4xl">{{ $t('emblems.title') }}</h1>
-                </div>
-                <span class="text-xs text-white/40">{{ $t('layout.records', { count: filteredEmblems.length }) }}</span>
-            </div>
+        <div class="p-6">
+            <h1 class="text-2xl font-bold mb-6 text-white">{{ $t('emblems.title') }}</h1>
 
-            <div class="mb-6 flex flex-wrap gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4">
+            <div class="flex flex-wrap gap-4 mb-6 bg-gray-800 p-4 rounded-lg">
                 <div class="flex-1 min-w-[200px]">
                     <label class="block text-xs text-gray-400 mb-1">{{ $t('items.search_label') }}</label>
                     <input
                         v-model="search"
                         type="text"
                         :placeholder="$t('emblems.search_placeholder')"
-                        class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-text-sky-300"
+                        class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none"
                     />
                 </div>
                 <div class="min-w-[180px]">
                     <label class="block text-xs text-gray-400 mb-1">{{ $t('items.rarity_label') }}</label>
-                    <select v-model="tierFilter" class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-text-sky-300">
+                    <select v-model="tierFilter" class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none">
                         <option value="">{{ $t('items.rarity_all') }}</option>
                         <option v-for="tier in availableTiers" :key="tier" :value="tier">{{ tier }}</option>
                     </select>
                 </div>
                 <div class="min-w-[180px]">
                     <label class="block text-xs text-gray-400 mb-1">{{ $t('items.confidentiality_label') }}</label>
-                    <select v-model="confidentialFilter" class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-text-sky-300">
+                    <select v-model="confidentialFilter" class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none">
                         <option value="">{{ $t('items.confidentiality_all') }}</option>
                         <option value="classified">{{ $t('items.classified_only') }}</option>
                         <option value="public">{{ $t('items.public_only') }}</option>
@@ -36,12 +30,12 @@
                 </div>
                 <div class="min-w-[180px]">
                     <label class="block text-xs text-gray-400 mb-1">{{ $t('items.sort_label') }}</label>
-                    <select v-model="sortBy" class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-text-sky-300">
+                    <select v-model="sortBy" class="w-full bg-gray-900 text-white text-sm rounded px-3 py-2 border border-gray-700 focus:border-blue-400 focus:outline-none">
                         <option v-for="option in sortOptions" :key="option.value" :value="option.value">{{ option.label }}</option>
                     </select>
                 </div>
                 <div class="flex items-end">
-                    <button @click="resetFilters" class="px-2 py-2 text-sm text-white/50 underline transition hover:text-white">
+                    <button @click="resetFilters" class="text-sm text-gray-400 hover:text-white underline px-2 py-2">
                         {{ $t('items.reset') }}
                     </button>
                 </div>
@@ -51,11 +45,11 @@
                 {{ $t('emblems.results_count', { count: filteredEmblems.length }) }}
             </p>
 
-            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-12 gap-4">
                 <div
                     v-for="emblem in filteredEmblems"
                     :key="emblem.id"
-                    class="group relative cursor-pointer rounded-xl border-2 bg-white/[0.03] p-3 transition hover:-translate-y-1 hover:bg-white/[0.06]"
+                    class="relative bg-gray-800 rounded-lg p-3 hover:bg-gray-700 transition cursor-pointer border"
                     :class="tierBorderClass(emblem.tier_type)"
                     @click="openEmblemDetail(emblem)"
                 >
@@ -74,13 +68,13 @@
                         v-if="emblem.archive_icon_path"
                         :src="emblem.archive_icon_path"
                         :alt="emblem.name"
-                        class="mb-2 aspect-square w-full rounded-lg object-cover opacity-90 transition group-hover:opacity-100"
+                        class="w-full aspect-square object-cover rounded mb-2"
                     />
                     <div v-else class="w-full aspect-square bg-gray-900 rounded mb-2 flex items-center justify-center text-gray-500 text-xs">
                         {{ $t('drawer.no_icon') }}
                     </div>
-                    <p class="truncate text-sm font-semibold text-white">{{ emblem.name }}</p>
-                    <p class="text-xs text-white/40">{{ emblem.tier_type_name }}</p>
+                    <p class="text-sm text-white font-semibold truncate">{{ emblem.name }}</p>
+                    <p class="text-xs text-gray-400">{{ emblem.tier_type_name }}</p>
                 </div>
             </div>
 
@@ -158,22 +152,12 @@ function resetFilters() {
 }
 
 function tierBorderClass(tierType) {
-    switch (String(tierType).toLowerCase()) {
-        case '6':
-        case 'exotique':
-            return 'border-yellow-500';
-        case '5':
-        case 'légendaire':
-        case 'legendary':
-            return 'border-purple-500';
-        case '4':
-        case 'rare':
-            return 'border-blue-500';
-        case '3':
-        case 'peu commun':
-        case 'uncommon':
-            return 'border-green-500';
-        default: return 'border-white';
+    switch (tierType) {
+        case 6: return 'border-yellow-500';
+        case 5: return 'border-purple-500';
+        case 4: return 'border-blue-500';
+        case 3: return 'border-green-500';
+        default: return 'border-gray-600';
     }
 }
 
