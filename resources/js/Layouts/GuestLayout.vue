@@ -18,5 +18,8 @@ import { Link } from '@inertiajs/vue3';
         >
             <slot />
         </div>
+        <footer class="mt-6 pb-6 text-xs text-white/35">
+            v{{ $page.props.appVersion }}
+        </footer>
     </div>
 </template>

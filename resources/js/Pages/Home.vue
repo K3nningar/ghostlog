@@ -76,13 +76,6 @@ const categoryPaths = {
                 </div>
             </section>
 
-            <!-- Footer -->
-            <footer class="border-t border-white/10 py-8">
-                <div class="mx-auto flex max-w-7xl flex-col gap-2 px-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
-                    <p>{{ $t('layout.footer_copyright') }}</p>
-                    <p>{{ $t('layout.footer_copyright_bungie') }}</p>
-                </div>
-            </footer>
         </div>
     </AppLayout>
 </template>

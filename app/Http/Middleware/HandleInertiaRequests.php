@@ -37,6 +37,7 @@ class HandleInertiaRequests extends Middleware
             ],
             'currentLocale' => $request->session()->get('locale', 'fr'),
             'availableLocales' => $this->availableLocales(),
+            'appVersion' => config('app.version'),
         ];
     }
 

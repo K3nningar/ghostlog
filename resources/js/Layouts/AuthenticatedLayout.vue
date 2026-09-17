@@ -193,6 +193,11 @@ const showingNavigationDropdown = ref(false);
             <main>
                 <slot />
             </main>
+            <footer class="flex flex-col gap-2 border-t border-white/10 px-5 py-5 text-center text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+                <span>{{ $t('layout.footer_copyright') }}</span>
+                <span>v{{ $page.props.appVersion }}</span>
+                <span>{{ $t('layout.footer_copyright_bungie') }}</span>
+            </footer>
         </div>
     </div>
 </template>
