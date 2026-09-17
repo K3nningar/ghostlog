@@ -69,6 +69,9 @@ function changeLocale(event) {
                     <Link href="/emblems" class="transition hover:text-white">{{ $t('categories.emblems') }}</Link>
                 </nav>
                 <div class="flex items-center gap-2">
+                    <span class="hidden text-[10px] uppercase tracking-[0.16em] text-white/30 sm:inline">
+                        v{{ $page.props.appVersion }}
+                    </span>
                     <label class="sr-only" for="locale-select">{{ $t('layout.language') }}</label>
                 <select
                     id="locale-select"
