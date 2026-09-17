@@ -1,7 +1,7 @@
 {
     "layout": {
         "language": "Language",
-        "archive": "Archive",
+        "archive": "Home",
         "archive_index": "Archive index",
         "records": "{count} records",
         "app_description": "The ultimate archive of the Destiny 1 API.",
@@ -41,13 +41,17 @@
     "weapons": {
         "title": "Weapons",
         "search_placeholder": "Weapon name...",
-        "results_count": "{count} weapon found | {count} weapons found"
+        "results_count": "{count} weapon found | {count} weapons found",
+        "empty_state": "No weapon matches these criteria.",
+        "hash_label": "Hash"
     },
 
     "armors": {
         "title": "Armor",
         "search_placeholder": "Armor name...",
-        "results_count": "{count} armor piece found | {count} armor pieces found"
+        "results_count": "{count} armor piece found | {count} armor pieces found",
+        "empty_state": "No armor matches these criteria.",
+        "hash_label": "Hash"
     },
 
     "ships": {

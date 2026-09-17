@@ -64,6 +64,8 @@ function changeLocale(event) {
                 </Link>
                 <nav class="hidden items-center gap-6 text-xs uppercase tracking-[0.16em] text-white/50 md:flex">
                     <Link href="/" class="transition hover:text-white">{{ $t('layout.archive') }}</Link>
+                    <Link href="/weapons" class="transition hover:text-white">{{ $t('categories.weapons') }}</Link>
+                    <Link href="/armors" class="transition hover:text-white">{{ $t('categories.armors') }}</Link>
                     <Link href="/ships" class="transition hover:text-white">{{ $t('categories.ships') }}</Link>
                     <Link href="/sparrows" class="transition hover:text-white">{{ $t('categories.sparrows') }}</Link>
                     <Link href="/emblems" class="transition hover:text-white">{{ $t('categories.emblems') }}</Link>

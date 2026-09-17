@@ -1,7 +1,7 @@
 {
     "layout": {
         "language": "Sprache",
-        "archive": "Archiv",
+        "archive": "Startseite",
         "archive_index": "Archivindex",
         "records": "{count} Einträge",
         "app_description": "Das ultimative Archiv der Destiny-1-API.",
@@ -41,13 +41,17 @@
     "weapons": {
         "title": "Waffen",
         "search_placeholder": "Name der Waffe...",
-        "results_count": "{count} Waffe gefunden | {count} Waffen gefunden"
+        "results_count": "{count} Waffe gefunden | {count} Waffen gefunden",
+        "empty_state": "Keine Waffe entspricht diesen Kriterien.",
+        "hash_label": "Hash"
     },
 
     "armors": {
         "title": "Rüstungen",
         "search_placeholder": "Name der Rüstung...",
-        "results_count": "{count} Stück Rüstung gefunden | {count} Stücke Rüstung gefunden"
+        "results_count": "{count} Stück Rüstung gefunden | {count} Stücke Rüstung gefunden",
+        "empty_state": "Keine Rüstung entspricht diesen Kriterien.",
+        "hash_label": "Hash"
     },
 
     "ships": {

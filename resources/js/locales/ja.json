@@ -1,7 +1,7 @@
 {
     "layout": {
         "language": "言語",
-        "archive": "アーカイブ",
+        "archive": "ホーム",
         "archive_index": "アーカイブインデックス",
         "records": "{count}件",
         "app_description": "Destiny 1 APIの究極のアーカイブ。",
@@ -39,12 +39,16 @@
     "weapons": {
         "title": "武器",
         "search_placeholder": "武器名...",
-        "results_count": "{count}個の武器が見つかりました | {count}個の武器が見つかりました"
+        "results_count": "{count}個の武器が見つかりました | {count}個の武器が見つかりました",
+        "empty_state": "条件に一致する武器はありません。",
+        "hash_label": "ハッシュ"
     },
     "armors": {
         "title": "防具",
         "search_placeholder": "防具名...",
-        "results_count": "{count}個の防具が見つかりました | {count}個の防具が見つかりました"
+        "results_count": "{count}個の防具が見つかりました | {count}個の防具が見つかりました",
+        "empty_state": "条件に一致する防具はありません。",
+        "hash_label": "ハッシュ"
     },
     "ships": {
         "title": "シップ",

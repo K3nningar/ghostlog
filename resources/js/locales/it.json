@@ -1,7 +1,7 @@
 {
     "layout": {
         "language": "Lingua",
-        "archive": "Archivio",
+        "archive": "Home",
         "archive_index": "Indice dell'archivio",
         "records": "{count} elementi",
         "app_description": "L'archivio definitivo dell'API di Destiny 1.",
@@ -39,12 +39,16 @@
     "weapons": {
         "title": "Armi",
         "search_placeholder": "Nome dell'arma...",
-        "results_count": "{count} armi trovate | {count} arma trovata"
+        "results_count": "{count} armi trovate | {count} arma trovata",
+        "empty_state": "Nessuna arma corrisponde a questi criteri.",
+        "hash_label": "Hash"
     },
     "armors": {
         "title": "Armature",
         "search_placeholder": "Nome dell'armatura...",
-        "results_count": "{count} pezzi di armatura trovati | {count} pezzo di armatura trovato"
+        "results_count": "{count} pezzi di armatura trovati | {count} pezzo di armatura trovato",
+        "empty_state": "Nessuna armatura corrisponde a questi criteri.",
+        "hash_label": "Hash"
     },
     "ships": {
         "title": "Navi",
