@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('items', function (Blueprint $table) {
-            $table->dropUnique('items_hash_unique');
-        });
+        $indexExists = collect(DB::select("SHOW INDEX FROM items WHERE Key_name = 'items_hash_unique'"))->isNotEmpty();
+
+        if ($indexExists) {
+            Schema::table('items', function (Blueprint $table) {
+                $table->dropUnique('items_hash_unique');
+            });
+        }
     }
 
     /**

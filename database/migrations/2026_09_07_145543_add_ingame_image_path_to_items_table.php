@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('items', function (Blueprint $table) {
-            $table->string('ingame_image_path')->nullable()->after('archive_icon_path');
-        });
+        if (!Schema::hasColumn('items', 'ingame_image_path')) {
+            Schema::table('items', function (Blueprint $table) {
+                $table->string('ingame_image_path')->nullable()->after('archive_icon_path');
+            });
+        }
     }
 
     /**

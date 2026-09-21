@@ -8,9 +8,12 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('items', function (Blueprint $table) {
-            $table->string('archive_icon_path_secondary')->nullable()->after('archive_icon_path');
-        });
+        if (!Schema::hasColumn('items', 'archive_icon_path_secondary')) {
+            Schema::table('items', function (Blueprint $table) {
+                $table->string('archive_icon_path_secondary')->nullable();
+                // garde les mêmes options (after, etc.) que dans ton fichier original
+            });
+        }
     }
 
     public function down(): void
