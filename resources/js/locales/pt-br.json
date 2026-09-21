@@ -66,7 +66,8 @@
         "results_count": "{count} emblema encontrado | {count} emblemas encontrados",
         "empty_state": "Nenhum emblema corresponde a estes critérios.",
         "description_label": "Descrição",
-        "hash_label": "Hash"
+        "hash_label": "Hash",
+        "perks_label" : "Vantagens"
     },
     "consumables": {
         "title": "Consumíveis",

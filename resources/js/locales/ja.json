@@ -41,7 +41,8 @@
         "search_placeholder": "武器名...",
         "results_count": "{count}個の武器が見つかりました | {count}個の武器が見つかりました",
         "empty_state": "条件に一致する武器はありません。",
-        "hash_label": "ハッシュ"
+        "hash_label": "ハッシュ",
+        "perks_label" : "特性"
     },
     "armors": {
         "title": "防具",

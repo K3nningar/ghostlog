@@ -41,7 +41,8 @@
         "search_placeholder": "Nome dell'arma...",
         "results_count": "{count} armi trovate | {count} arma trovata",
         "empty_state": "Nessuna arma corrisponde a questi criteri.",
-        "hash_label": "Hash"
+        "hash_label": "Hash",
+        "perks_label" : "Caratteristiche"
     },
     "armors": {
         "title": "Armature",

@@ -43,7 +43,8 @@
         "search_placeholder": "Name der Waffe...",
         "results_count": "{count} Waffe gefunden | {count} Waffen gefunden",
         "empty_state": "Keine Waffe entspricht diesen Kriterien.",
-        "hash_label": "Hash"
+        "hash_label": "Hash",
+        "perks_label" : "Vorteile"
     },
 
     "armors": {

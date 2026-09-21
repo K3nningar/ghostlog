@@ -43,7 +43,8 @@
         "search_placeholder": "Nom de l'arme...",
         "results_count": "{count} arme trouvée | {count} armes trouvées",
         "empty_state": "Aucune arme ne correspond à ces critères.",
-        "hash_label": "Hash"
+        "hash_label": "Hash",
+        "perks_label" : "Caractéristiques"
     },
 
     "armors": {

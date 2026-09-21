@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Item extends Model
 {
@@ -56,5 +57,12 @@ class Item extends Model
                 return $this->icon_url;
             },
         );
+    }
+
+    public function perks(): BelongsToMany
+    {
+        return $this->belongsToMany(Perk::class, 'item_perk')
+            ->withPivot(['node_index', 'column', 'row', 'exclusive_group_id', 'is_default', 'grid_level_required', 'sort_order', 'meta'])
+            ->withTimestamps();
     }
 }

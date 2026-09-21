@@ -43,7 +43,8 @@
         "search_placeholder": "Weapon name...",
         "results_count": "{count} weapon found | {count} weapons found",
         "empty_state": "No weapon matches these criteria.",
-        "hash_label": "Hash"
+        "hash_label": "Hash",
+        "perks_label" : "Perks"
     },
 
     "armors": {

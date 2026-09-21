@@ -15,9 +15,15 @@ use Inertia\Inertia;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/sparrows', [SparrowController::class, 'index'])->name('sparrows.index');
+
 Route::get('/ships', [ShipController::class, 'index'])->name('ships.index');
+
 Route::get('/emblems', [EmblemController::class, 'index'])->name('emblems.index');
+
 Route::get('/weapons', [WeaponController::class, 'index'])->name('weapons.index');
+Route::get('/weapons/{hash}/perks', [WeaponController::class, 'perks'])->name('weapons.perks');
+
+
 Route::get('/armors', [ArmorController::class, 'index'])->name('armors.index');
 
 Route::middleware('auth')->group(function () {
