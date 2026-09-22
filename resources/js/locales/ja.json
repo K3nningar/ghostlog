@@ -54,12 +54,14 @@
     "ships": {
         "title": "シップ",
         "search_placeholder": "シップ名...",
-        "results_count": "{count}隻のシップが見つかりました | {count}隻のシップが見つかりました"
+        "results_count": "{count}隻のシップが見つかりました | {count}隻のシップが見つかりました",
+        "empty_state": "条件に一致するシップはありません。"
     },
     "sparrows": {
         "title": "スパロー",
         "search_placeholder": "スパロー名...",
-        "results_count": "{count}台のスパローが見つかりました | {count}台のスパローが見つかりました"
+        "results_count": "{count}台のスパローが見つかりました | {count}台のスパローが見つかりました",
+        "empty_state": "条件に一致するスパローはありません。"
     },
     "emblems": {
         "title": "エンブレム",

@@ -58,13 +58,15 @@
     "ships": {
         "title": "Vaisseaux",
         "search_placeholder": "Nom du vaisseau...",
-        "results_count": "{count} vaisseau trouvé | {count} vaisseaux trouvés"
+        "results_count": "{count} vaisseau trouvé | {count} vaisseaux trouvés",
+        "empty_state": "Aucun vaisseau ne correspond à ces critères."
     },
 
     "sparrows": {
         "title": "Passereaux",
         "search_placeholder": "Nom du passereau...",
-        "results_count": "{count} passereau trouvé | {count} passereaux trouvés"
+        "results_count": "{count} passereau trouvé | {count} passereaux trouvés",
+        "empty_state": "Aucun passereau ne correspond à ces critères."
     },
 
     "emblems": {

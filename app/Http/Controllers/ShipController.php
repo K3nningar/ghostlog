@@ -8,28 +8,90 @@ use Inertia\Inertia;
 
 class ShipController extends Controller
 {
+    /**
+     * Liste paginée des vaisseaux (catalogue).
+     *
+     * Même logique que WeaponController::index() : filtrage et tri poussés
+     * côté serveur AVANT la pagination, afin de ne tirer que la page courante.
+     * La pagination serveur remplace l'ancien `get()` complet chargé côté front
+     * (filtres appliqués en JS sur l'intégralité des vaisseaux).
+     */
     public function index(Request $request)
     {
         $locale = $request->session()->get('locale', 'fr');
-        $ships = Item::where('category_slug', 'ships')
-            ->where('locale', $locale)
-            ->orderBy('hash', 'asc')
-            ->get([
-                'id',
-                'hash',
-                'locale',
-                'name',
-                'description',
-                'archive_icon_path',
-                'ingame_image_path',
-                'icon_downloaded',
-                'tier_type',
-                'tier_type_name',
-                'subcategory_slug',
-            ]);
+
+        $query = Item::query()
+            ->where('category_slug', 'ships')
+            ->where('locale', $locale);
+
+        // ---- Filtres serveur (avant la pagination) ----
+        $search = trim((string) $request->query('search', ''));
+        if ($search !== '') {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
+        $tier = $request->query('tier', '');
+        if ($tier !== '') {
+            $query->where(function ($q) use ($tier) {
+                if (is_numeric($tier)) {
+                    $q->where('tier_type', (int) $tier);
+                }
+                $q->orWhere('tier_type_name', $tier);
+            });
+        }
+
+        $confidential = $request->query('confidential', '');
+        if ($confidential === 'classified') {
+            $query->whereIn('subcategory_slug', ['classified', 'censored', 'secret']);
+        } elseif ($confidential === 'public') {
+            $query->whereNotIn('subcategory_slug', ['classified', 'censored', 'secret']);
+        }
+
+        // ---- Tri serveur ----
+        [$sortColumn, $sortDirection] = $this->resolveSort($request->query('sort', 'default'));
+
+        if ($sortColumn !== null) {
+            $query->orderBy($sortColumn, $sortDirection);
+        } else {
+            $query->orderBy('hash', 'asc');
+        }
+
+        $ships = $query
+            ->select([
+                'id', 'hash', 'locale', 'name', 'description',
+                'archive_icon_path', 'ingame_image_path', 'icon_downloaded',
+                'tier_type', 'tier_type_name', 'subcategory_slug',
+            ])
+            ->paginate(48)
+            ->withQueryString();
 
         return Inertia::render('Ships/Index', [
             'ships' => $ships,
+            'filters' => [
+                'search'        => $search,
+                'tier'          => $tier,
+                'confidential'  => $confidential,
+                'sort'          => $request->query('sort', 'default'),
+            ],
         ]);
+    }
+
+    /**
+     * Résout l'option de tri du front en couple (colonne SQL, direction).
+     * "default" → null (ordre par hash géré dans index()).
+     *
+     * @return array{0:?string,1:string}
+     */
+    protected function resolveSort(string $sort): array
+    {
+        return match ($sort) {
+            'tier-asc'   => ['tier_type', 'asc'],
+            'tier-desc'  => ['tier_type', 'desc'],
+            'name-asc'   => ['name', 'asc'],
+            'name-desc'  => ['name', 'desc'],
+            'hash-asc'   => ['hash', 'asc'],
+            'hash-desc'  => ['hash', 'desc'],
+            default      => [null, 'asc'],
+        };
     }
 }

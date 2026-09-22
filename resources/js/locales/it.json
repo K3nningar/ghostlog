@@ -54,12 +54,14 @@
     "ships": {
         "title": "Navi",
         "search_placeholder": "Nome della nave...",
-        "results_count": "{count} navi trovate | {count} nave trovata"
+        "results_count": "{count} navi trovate | {count} nave trovata",
+        "empty_state": "Nessuna nave corrisponde a questi criteri."
     },
     "sparrows": {
         "title": "Passeri",
         "search_placeholder": "Nome del passero...",
-        "results_count": "{count} passeri trovati | {count} passero trovato"
+        "results_count": "{count} passeri trovati | {count} passero trovato",
+        "empty_state": "Nessun passero corrisponde a questi criteri."
     },
     "emblems": {
         "title": "Emblemi",

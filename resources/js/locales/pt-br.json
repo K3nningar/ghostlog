@@ -53,12 +53,14 @@
     "ships": {
         "title": "Naves",
         "search_placeholder": "Nome da nave...",
-        "results_count": "{count} nave encontradas | {count} naves encontradas"
+        "results_count": "{count} nave encontradas | {count} naves encontradas",
+        "empty_state": "Nenhuma nave corresponde a estes critérios."
     },
     "sparrows": {
         "title": "Sparrows",
         "search_placeholder": "Nome do Sparrow...",
-        "results_count": "{count} Sparrow encontrado | {count} Sparrows encontrados"
+        "results_count": "{count} Sparrow encontrado | {count} Sparrows encontrados",
+        "empty_state": "Nenhum Sparrow corresponde a estes critérios."
     },
     "emblems": {
         "title": "Emblemas",

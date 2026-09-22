@@ -54,12 +54,14 @@
     "ships": {
         "title": "Naves",
         "search_placeholder": "Nombre de la nave...",
-        "results_count": "{count} nave encontradas | {count} naves encontradas"
+        "results_count": "{count} nave encontradas | {count} naves encontradas",
+        "empty_state": "Ninguna nave coincide con estos criterios."
     },
     "sparrows": {
         "title": "Colibríes",
         "search_placeholder": "Nombre del colibrí...",
-        "results_count": "{count} colibrí encontrados | {count} colibríes encontrado"
+        "results_count": "{count} colibrí encontrados | {count} colibríes encontrado",
+        "empty_state": "Ningún colibrí coincide con estos criterios."
     },
     "emblems": {
         "title": "Emblemas",
