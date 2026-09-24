@@ -47,6 +47,12 @@ class ShipController extends Controller
             $query->whereNotIn('subcategory_slug', ['classified', 'censored', 'secret']);
         }
 
+        // ---- Pagination ----
+        // Taille de page sélectionnable via le front (sélecteur "Par page"),
+        // restreinte à une whitelist pour éviter tout abus de paramètre.
+        $perPageParam = (int) $request->query('per_page', '48');
+        $perPage = in_array($perPageParam, [24, 48, 96, 192], true) ? $perPageParam : 48;
+
         // ---- Tri serveur ----
         [$sortColumn, $sortDirection] = $this->resolveSort($request->query('sort', 'default'));
 
@@ -62,16 +68,34 @@ class ShipController extends Controller
                 'archive_icon_path', 'ingame_image_path', 'icon_downloaded',
                 'tier_type', 'tier_type_name', 'subcategory_slug',
             ])
-            ->paginate(48)
+            ->paginate($perPage)
             ->withQueryString();
+
+        // Liste exhaustive des raretés de la catégorie (toutes pages
+        // confondues) : le filtre du front doit proposer toutes les options
+        // même si aucune ne figure dans la page courante. Chaque entrée
+        // embarque son tier_type afin que le front puisse colorer l'option
+        // selon la rareté, indépendamment de la langue. Tri par tier_type
+        // décroissant (exotique en premier), valeurs NULL en dernier.
+        $tiers = Item::query()
+            ->where('category_slug', 'ships')
+            ->where('locale', $locale)
+            ->whereNotNull('tier_type_name')
+            ->groupBy('tier_type', 'tier_type_name')
+            ->orderByRaw('tier_type IS NULL, tier_type DESC')
+            ->get(['tier_type', 'tier_type_name'])
+            ->unique('tier_type_name')
+            ->values();
 
         return Inertia::render('Ships/Index', [
             'ships' => $ships,
+            'tiers' => $tiers,
             'filters' => [
                 'search'        => $search,
                 'tier'          => $tier,
                 'confidential'  => $confidential,
                 'sort'          => $request->query('sort', 'default'),
+                'per_page'      => $perPage,
             ],
         ]);
     }

@@ -48,6 +48,10 @@ function changeLocale(event) {
         preserveState: false,
     });
 }
+
+function logout() {
+    router.post('/logout');
+}
 </script>
 
 <template>
@@ -69,11 +73,21 @@ function changeLocale(event) {
                     <Link href="/ships" class="transition hover:text-white">{{ $t('categories.ships') }}</Link>
                     <Link href="/sparrows" class="transition hover:text-white">{{ $t('categories.sparrows') }}</Link>
                     <Link href="/emblems" class="transition hover:text-white">{{ $t('categories.emblems') }}</Link>
+                    <Link href="/ghosts" class="transition hover:text-white">{{ $t('categories.ghosts') }}</Link>
+                    <Link v-if="$page.props.auth.isAdmin" href="/admin/items" class="text-[var(--dm-accent)] transition hover:text-white">{{ $t('admin.title') }}</Link>
                 </nav>
                 <div class="flex items-center gap-2">
                     <span class="hidden text-[10px] uppercase tracking-[0.16em] text-white/30 sm:inline">
                         v{{ $page.props.appVersion }}
                     </span>
+                    <button
+                        v-if="$page.props.auth.user"
+                        type="button"
+                        @click="logout"
+                        class="rounded-lg border border-white/10 bg-[#151515] px-2 py-1.5 text-xs text-white/60 transition hover:text-white"
+                    >
+                        {{ $t('admin.logout') }}
+                    </button>
                     <label class="sr-only" for="locale-select">{{ $t('layout.language') }}</label>
                 <select
                     id="locale-select"

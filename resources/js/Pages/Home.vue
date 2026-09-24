@@ -12,6 +12,7 @@ const categories = [
     { key: 'ships', image: '/img/menus/ships.jpg' },
     { key: 'sparrows', image: '/img/menus/sparrows.jpg' },
     { key: 'emblems', image: '/img/menus/emblems.jpg' },
+    { key: 'ghosts', image: '/img/menus/ghosts.jpg' },
     { key: 'consumables', image: '/img/menus/consumables.jpg' },
 ];
 
@@ -21,6 +22,7 @@ const categoryPaths = {
     ships: '/ships',
     sparrows: '/sparrows',
     emblems: '/emblems',
+    ghosts: '/ghosts',
     consumables: '/consumables',
 };
 </script>

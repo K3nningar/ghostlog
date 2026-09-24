@@ -3,17 +3,21 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Item extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'hash', 'locale', 'name', 'description', 'icon_url',
         'item_type', 'item_type_name', 'item_sub_type', 'class_type',
         'tier_type', 'tier_type_name', 'bucket_type_hash',
         'category_hashes', 'category_slug', 'subcategory_slug',
-        'icon_downloaded', 'archive_icon_path', 'archive_icon_path_secondary', 'raw_json',
+        'icon_downloaded', 'archive_icon_path', 'archive_icon_path_secondary',
+        'ingame_image_path', 'raw_json',
     ];
 
     protected $casts = [

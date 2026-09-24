@@ -35,6 +35,16 @@
         "secret_item": "Objet secret",
         "secret_item_description": "Objet ayant été directement mis en tant que confidentiel dans l'API. Seuls ses références subsistent. Aucune information n'est disponible pour le moment.",
         "public_only": "Publics seulement",
+        "sort_default": "Par défaut",
+        "sort_tier_asc": "Tier (croissant)",
+        "sort_tier_desc": "Tier (décroissant)",
+        "sort_name_asc": "Nom (A → Z)",
+        "sort_name_desc": "Nom (Z → A)",
+        "sort_hash_asc": "Hash (croissant)",
+        "sort_hash_desc": "Hash (décroissant)",
+        "prev_page": "Précédent",
+        "next_page": "Suivant",
+        "per_page_label": "Par page",
         "reset": "Réinitialiser"
     },
 
@@ -84,6 +94,32 @@
         "results_count": "{count} consommable trouvé | {count} consommables trouvés"
     },
 
+    "ghosts": {
+        "title": "Spectres",
+        "search_placeholder": "Nom du spectre...",
+        "results_count": "{count} spectre trouvé | {count} spectres trouvés",
+        "empty_state": "Aucun spectre ne correspond à ces critères.",
+        "hash_label": "Hash"
+    },
+
+    "admin": {
+        "title": "Admin",
+        "archive_administration": "Administration de l'archive",
+        "new_item": "Nouvel item",
+        "back_to_list": "Retour à la liste",
+        "search_hash_name": "Recherche (nom ou hash)",
+        "name": "Nom",
+        "category": "Catégorie",
+        "locale": "Locale",
+        "icon_downloaded": "Icône locale",
+        "updated": "Modifié",
+        "edit": "Éditer",
+        "no_items": "Aucun item ne correspond à ces critères.",
+        "yes": "Oui",
+        "no": "Non",
+        "logout": "Déconnexion"
+    },
+
     "drawer": {
         "no_icon": "Pas de visuel disponible",
         "confidential": "Confidentiel",
@@ -98,6 +134,7 @@
         "ships": "Vaisseaux",
         "sparrows": "Passereaux",
         "emblems": "Emblèmes",
-        "consumables": "Consommables"
+        "consumables": "Consommables",
+        "ghosts": "Coques de Spectre"
     }
 }

@@ -34,6 +34,16 @@
         "secret_item": "秘密のアイテム",
         "secret_item_description": "APIで直接機密扱いに設定されたアイテムです。残っているのは参照情報だけで、現時点では情報がありません。",
         "public_only": "公開済みのみ",
+        "sort_default": "デフォルト",
+        "sort_tier_asc": "レアリティ（昇順）",
+        "sort_tier_desc": "レアリティ（降順）",
+        "sort_name_asc": "名前（A → Z）",
+        "sort_name_desc": "名前（Z → A）",
+        "sort_hash_asc": "ハッシュ（昇順）",
+        "sort_hash_desc": "ハッシュ（降順）",
+        "prev_page": "前へ",
+        "next_page": "次へ",
+        "per_page_label": "表示件数",
         "reset": "リセット"
     },
     "weapons": {
@@ -76,6 +86,31 @@
         "search_placeholder": "消耗品名...",
         "results_count": "{count}個の消耗品が見つかりました | {count}個の消耗品が見つかりました"
     },
+    "ghosts": {
+        "title": "ゴースト",
+        "search_placeholder": "ゴースト名...",
+        "results_count": "{count}個のゴーストが見つかりました | {count}個のゴーストが見つかりました",
+        "empty_state": "条件に一致するゴーストはありません。",
+        "hash_label": "ハッシュ"
+    },
+    "admin": {
+        "title": "管理",
+        "archive_administration": "アーカイブ管理",
+        "new_item": "新規アイテム",
+        "back_to_list": "一覧に戻る",
+        "search_hash_name": "検索（名前またはハッシュ）",
+        "name": "名前",
+        "category": "カテゴリー",
+        "locale": "言語",
+        "icon_downloaded": "ローカルアイコン",
+        "updated": "更新日時",
+        "edit": "編集",
+        "no_items": "条件に一致するアイテムはありません。",
+        "yes": "はい",
+        "no": "いいえ",
+        "logout": "ログアウト"
+    },
+
     "drawer": {
         "no_icon": "アイコンなし",
         "confidential": "機密",
@@ -89,6 +124,7 @@
         "ships": "シップ",
         "sparrows": "スパロー",
         "emblems": "エンブレム",
-        "consumables": "消耗品"
+        "consumables": "消耗品",
+        "ghosts": "ゴースト"
     }
 }

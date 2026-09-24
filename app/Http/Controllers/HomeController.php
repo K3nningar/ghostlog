@@ -31,6 +31,7 @@ class HomeController extends Controller
                 'ships',
                 'sparrows',
                 'emblems',
+                'ghosts',
                 'consumables',
             ])
             ->selectRaw('category_slug, COUNT(*) as total')
@@ -42,6 +43,7 @@ class HomeController extends Controller
                 'ships' => 0,
                 'sparrows' => 0,
                 'emblems' => 0,
+                'ghosts' => 0,
                 'consumables' => 0,
             ])
             ->only([
@@ -50,6 +52,7 @@ class HomeController extends Controller
                 'ships',
                 'sparrows',
                 'emblems',
+                'ghosts',
                 'consumables',
             ])
             ->all();

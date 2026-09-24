@@ -35,6 +35,16 @@
         "secret_item": "Geheimes Objekt",
         "secret_item_description": "Objekt, das in der API direkt als vertraulich eingestuft wurde. Nur seine Referenzen sind erhalten geblieben. Derzeit sind keine Informationen verfügbar.",
         "public_only": "Nur öffentliche",
+        "sort_default": "Standard",
+        "sort_tier_asc": "Seltenheit (aufsteigend)",
+        "sort_tier_desc": "Seltenheit (absteigend)",
+        "sort_name_asc": "Name (A → Z)",
+        "sort_name_desc": "Name (Z → A)",
+        "sort_hash_asc": "Hash (aufsteigend)",
+        "sort_hash_desc": "Hash (absteigend)",
+        "prev_page": "Zurück",
+        "next_page": "Weiter",
+        "per_page_label": "Pro Seite",
         "reset": "Zurücksetzen"
     },
 
@@ -84,6 +94,32 @@
         "results_count": "{count} Verbrauchsgegenstand gefunden | {count} Verbrauchsgegenstände gefunden"
     },
 
+    "ghosts": {
+        "title": "Geister",
+        "search_placeholder": "Name des Geistes...",
+        "results_count": "{count} Geist gefunden | {count} Geister gefunden",
+        "empty_state": "Kein Geist entspricht diesen Kriterien.",
+        "hash_label": "Hash"
+    },
+
+    "admin": {
+        "title": "Admin",
+        "archive_administration": "Archivverwaltung",
+        "new_item": "Neues Objekt",
+        "back_to_list": "Zurück zur Liste",
+        "search_hash_name": "Suche (Name oder Hash)",
+        "name": "Name",
+        "category": "Kategorie",
+        "locale": "Sprache",
+        "icon_downloaded": "Lokales Symbol",
+        "updated": "Geändert",
+        "edit": "Bearbeiten",
+        "no_items": "Kein Objekt entspricht diesen Kriterien.",
+        "yes": "Ja",
+        "no": "Nein",
+        "logout": "Abmelden"
+    },
+
     "drawer": {
         "no_icon": "Kein Symbol verfügbar",
         "confidential": "Klassifiziert",
@@ -98,6 +134,7 @@
         "ships": "Schiffe",
         "sparrows": "Sparrows",
         "emblems": "Abzeichen",
-        "consumables": "Verbrauchsgegenstände"
+        "consumables": "Verbrauchsgegenstände",
+        "ghosts": "Geister"
     }
 }

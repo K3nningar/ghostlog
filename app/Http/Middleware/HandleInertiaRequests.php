@@ -34,6 +34,7 @@ class HandleInertiaRequests extends Middleware
             ...parent::share($request),
             'auth' => [
                 'user' => $request->user(),
+                'isAdmin' => $request->user()?->is_admin ?? false,
             ],
             'currentLocale' => $request->session()->get('locale', 'fr'),
             'availableLocales' => $this->availableLocales(),

@@ -34,6 +34,16 @@
         "secret_item": "Item secreto",
         "secret_item_description": "Item definido diretamente como classificado na API. Restam apenas suas referências. Nenhuma informação está disponível no momento.",
         "public_only": "Somente públicas",
+        "sort_default": "Padrão",
+        "sort_tier_asc": "Raridade (crescente)",
+        "sort_tier_desc": "Raridade (decrescente)",
+        "sort_name_asc": "Nome (A → Z)",
+        "sort_name_desc": "Nome (Z → A)",
+        "sort_hash_asc": "Hash (crescente)",
+        "sort_hash_desc": "Hash (decrescente)",
+        "prev_page": "Anterior",
+        "next_page": "Próximo",
+        "per_page_label": "Por página",
         "reset": "Redefinir"
     },
     "weapons": {
@@ -76,6 +86,31 @@
         "search_placeholder": "Nome do consumível...",
         "results_count": "{count} consumível encontrado | {count} consumíveis encontrados"
     },
+    "ghosts": {
+        "title": "Espectros",
+        "search_placeholder": "Nome do espectro...",
+        "results_count": "{count} espectro encontrado | {count} espectros encontrados",
+        "empty_state": "Nenhum espectro corresponde a estes critérios.",
+        "hash_label": "Hash"
+    },
+    "admin": {
+        "title": "Admin",
+        "archive_administration": "Administração do arquivo",
+        "new_item": "Novo item",
+        "back_to_list": "Voltar à lista",
+        "search_hash_name": "Pesquisa (nome ou hash)",
+        "name": "Nome",
+        "category": "Categoria",
+        "locale": "Idioma",
+        "icon_downloaded": "Ícone local",
+        "updated": "Modificado",
+        "edit": "Editar",
+        "no_items": "Nenhum item corresponde a estes critérios.",
+        "yes": "Sim",
+        "no": "Não",
+        "logout": "Sair"
+    },
+
     "drawer": {
         "no_icon": "Nenhum ícone disponível",
         "confidential": "Classificado",
@@ -89,6 +124,7 @@
         "ships": "Naves",
         "sparrows": "Sparrows",
         "emblems": "Emblemas",
-        "consumables": "Consumíveis"
+        "consumables": "Consumíveis",
+        "ghosts": "Espectros"
     }
 }

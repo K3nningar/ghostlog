@@ -34,6 +34,16 @@
         "secret_item": "Oggetto segreto",
         "secret_item_description": "Oggetto impostato direttamente come classificato nell'API. Ne rimangono solo i riferimenti. Al momento non sono disponibili informazioni.",
         "public_only": "Solo pubbliche",
+        "sort_default": "Predefinito",
+        "sort_tier_asc": "Rarità (crescente)",
+        "sort_tier_desc": "Rarità (decrescente)",
+        "sort_name_asc": "Nome (A → Z)",
+        "sort_name_desc": "Nome (Z → A)",
+        "sort_hash_asc": "Hash (crescente)",
+        "sort_hash_desc": "Hash (decrescente)",
+        "prev_page": "Precedente",
+        "next_page": "Successivo",
+        "per_page_label": "Per pagina",
         "reset": "Reimposta"
     },
     "weapons": {
@@ -76,6 +86,31 @@
         "search_placeholder": "Nome del consumabile...",
         "results_count": "{count} consumabili trovati | {count} consumabile trovato"
     },
+    "ghosts": {
+        "title": "Spettri",
+        "search_placeholder": "Nome dello spettro...",
+        "results_count": "{count} spettri trovati | {count} spettro trovato",
+        "empty_state": "Nessuno spettro corrisponde a questi criteri.",
+        "hash_label": "Hash"
+    },
+    "admin": {
+        "title": "Admin",
+        "archive_administration": "Amministrazione dell'archivio",
+        "new_item": "Nuovo oggetto",
+        "back_to_list": "Torna all'elenco",
+        "search_hash_name": "Ricerca (nome o hash)",
+        "name": "Nome",
+        "category": "Categoria",
+        "locale": "Lingua",
+        "icon_downloaded": "Icona locale",
+        "updated": "Modificato",
+        "edit": "Modifica",
+        "no_items": "Nessun oggetto corrisponde a questi criteri.",
+        "yes": "Sì",
+        "no": "No",
+        "logout": "Esci"
+    },
+
     "drawer": {
         "no_icon": "Nessuna icona disponibile",
         "confidential": "Classificato",
@@ -89,6 +124,7 @@
         "ships": "Navi",
         "sparrows": "Passeri",
         "emblems": "Emblemi",
-        "consumables": "Consumabili"
+        "consumables": "Consumabili",
+        "ghosts": "Spettri"
     }
 }

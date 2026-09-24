@@ -35,6 +35,16 @@
         "secret_item": "Secret item",
         "secret_item_description": "Item that has been directly set as classified in the API. Only its references remain. No information is available at this time.",
         "public_only": "Public only",
+        "sort_default": "Default",
+        "sort_tier_asc": "Tier (ascending)",
+        "sort_tier_desc": "Tier (descending)",
+        "sort_name_asc": "Name (A → Z)",
+        "sort_name_desc": "Name (Z → A)",
+        "sort_hash_asc": "Hash (ascending)",
+        "sort_hash_desc": "Hash (descending)",
+        "prev_page": "Previous",
+        "next_page": "Next",
+        "per_page_label": "Per page",
         "reset": "Reset"
     },
 
@@ -84,6 +94,32 @@
         "results_count": "{count} consumable found | {count} consumables found"
     },
 
+    "ghosts": {
+        "title": "Ghosts",
+        "search_placeholder": "Ghost name...",
+        "results_count": "{count} ghost found | {count} ghosts found",
+        "empty_state": "No ghost matches these criteria.",
+        "hash_label": "Hash"
+    },
+
+
+    "admin": {
+        "title": "Admin",
+        "archive_administration": "Archive administration",
+        "new_item": "New item",
+        "back_to_list": "Back to list",
+        "search_hash_name": "Search (name or hash)",
+        "name": "Name",
+        "category": "Category",
+        "locale": "Locale",
+        "icon_downloaded": "Local icon",
+        "updated": "Updated",
+        "edit": "Edit",
+        "no_items": "No item matches these criteria.",
+        "yes": "Yes",
+        "no": "No",
+        "logout": "Log out"
+    },
 
     "drawer": {
         "no_icon": "No icon",
@@ -98,6 +134,7 @@
         "ships": "Ships",
         "sparrows": "Sparrows",
         "emblems": "Emblems",
-        "consumables": "Consumables"
+        "consumables": "Consumables",
+        "ghosts": "Ghosts"
     }
 }
