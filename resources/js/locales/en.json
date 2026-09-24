@@ -112,6 +112,7 @@
         "name": "Name",
         "category": "Category",
         "locale": "Locale",
+        "in_game": "In-game visual",
         "icon_downloaded": "Local icon",
         "updated": "Updated",
         "edit": "Edit",

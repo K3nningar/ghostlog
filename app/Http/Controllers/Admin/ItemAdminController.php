@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Item;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 
 class ItemAdminController extends Controller
@@ -32,7 +33,7 @@ class ItemAdminController extends Controller
         $query = Item::query()
             ->select([
                 'id', 'hash', 'locale', 'name', 'category_slug', 'subcategory_slug',
-                'tier_type', 'tier_type_name', 'icon_downloaded', 'updated_at',
+                'tier_type', 'tier_type_name', 'icon_downloaded', 'ingame_image_path', 'updated_at',
             ]);
 
         $search = trim((string) $request->query('search', ''));
@@ -84,6 +85,7 @@ class ItemAdminController extends Controller
     {
         return Inertia::render('Admin/Items/Create', [
             'categories' => $this->knownCategories(),
+            'subcategories' => $this->knownSubcategories(),
             'locales' => $this->knownLocales(),
         ]);
     }
@@ -98,6 +100,7 @@ class ItemAdminController extends Controller
         return Inertia::render('Admin/Items/Edit', [
             'item' => $item,
             'categories' => $this->knownCategories(),
+            'subcategories' => $this->knownSubcategories(),
             'locales' => $this->knownLocales(),
         ]);
     }
@@ -162,9 +165,44 @@ class ItemAdminController extends Controller
             $data['icon_downloaded'] = true;
         }
 
+        $originals = $item->getOriginal();
+
         $item->update($data);
 
+        $this->propagateMediaToSiblingLocales($item, $data, $originals);
+
         return back()->with('success', 'Item mis à jour avec succès.');
+    }
+
+    /**
+     * Répercute les chemins de médias modifiés (upload d'icône principale,
+     * d'icône secondaire ou de média en jeu) sur toutes les autres locales
+     * du même item (même hash), afin que l'upload d'un fichier depuis une
+     * seule traduction mette à jour l'objet entier.
+     */
+    private function propagateMediaToSiblingLocales(Item $item, array $data, array $originals): void
+    {
+        $mediaFields = ['archive_icon_path', 'archive_icon_path_secondary', 'ingame_image_path'];
+
+        $siblingUpdates = [];
+        foreach ($mediaFields as $field) {
+            if (array_key_exists($field, $data) && $data[$field] !== ($originals[$field] ?? null)) {
+                $siblingUpdates[$field] = $data[$field];
+            }
+        }
+
+        if (empty($siblingUpdates)) {
+            return;
+        }
+
+        if (!empty($siblingUpdates) && array_key_exists('archive_icon_path', $siblingUpdates)) {
+            $siblingUpdates['icon_downloaded'] = $item->icon_downloaded;
+        }
+
+        Item::query()
+            ->where('hash', $item->hash)
+            ->whereKeyNot($item->getKey())
+            ->update($siblingUpdates);
     }
 
     /**
@@ -184,6 +222,12 @@ class ItemAdminController extends Controller
 
         $data = $this->uploadContext($request);
         $hash = $data['hash'];
+
+        if ($variant === 'secondary' && $data['category_slug'] !== 'emblems') {
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                'archive_icon_secondary_file' => "L'icône secondaire n'est autorisée que pour la catégorie « emblems ».",
+            ]);
+        }
 
         $directory = $variant === 'secondary'
             ? 'archive/emblems/secondaryIcon'
@@ -306,8 +350,8 @@ class ItemAdminController extends Controller
             'bucket_type_hash' => ['nullable', 'integer'],
             'category_hashes' => ['nullable', 'array'],
             'category_hashes.*' => ['integer'],
-            'category_slug' => ['nullable', 'string', 'max:255'],
-            'subcategory_slug' => ['nullable', 'string', 'max:255'],
+            'category_slug' => ['nullable', 'string', 'max:255', Rule::in($this->knownCategories())],
+            'subcategory_slug' => ['nullable', 'string', 'max:255', Rule::in($this->knownSubcategories())],
             'archive_icon_path' => ['nullable', 'string', 'max:2048'],
             'archive_icon_path_secondary' => ['nullable', 'string', 'max:2048'],
             'ingame_image_path' => ['nullable', 'string', 'max:2048'],
@@ -386,6 +430,22 @@ class ItemAdminController extends Controller
     {
         return collect(['en', 'fr', 'de', 'es', 'it', 'ja', 'pt-br'])
             ->merge(Item::query()->distinct()->pluck('locale'))
+            ->unique()
+            ->sort()
+            ->values()
+            ->all();
+    }
+
+    /**
+     * Sous-catégories proposées dans les <select> du formulaire : slugs
+     * spéciaux (classification Bungie) + ceux réellement présents en base.
+     */
+    private function knownSubcategories(): array
+    {
+        $special = ['classified', 'censored', 'secret', 'beta', 'replaced', 'public'];
+
+        return collect($special)
+            ->merge(Item::query()->whereNotNull('subcategory_slug')->distinct()->pluck('subcategory_slug'))
             ->unique()
             ->sort()
             ->values()

@@ -4,6 +4,7 @@ import ItemForm from '@/Components/Admin/ItemForm.vue';
 
 defineProps({
     categories: { type: Array, default: () => [] },
+    subcategories: { type: Array, default: () => [] },
     locales: { type: Array, default: () => [] },
 });
 </script>
@@ -22,6 +23,7 @@ defineProps({
             <ItemForm
                 mode="create"
                 :categories="categories"
+                :subcategories="subcategories"
                 :locales="locales"
             />
         </div>

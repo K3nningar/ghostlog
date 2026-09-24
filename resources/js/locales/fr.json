@@ -111,6 +111,7 @@
         "name": "Nom",
         "category": "Catégorie",
         "locale": "Locale",
+        "in_game": "Visuel en jeu",
         "icon_downloaded": "Icône locale",
         "updated": "Modifié",
         "edit": "Éditer",

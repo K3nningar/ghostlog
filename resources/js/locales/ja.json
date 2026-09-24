@@ -102,6 +102,7 @@
         "name": "名前",
         "category": "カテゴリー",
         "locale": "言語",
+        "in_game": "ゲーム内ビジュアル",
         "icon_downloaded": "ローカルアイコン",
         "updated": "更新日時",
         "edit": "編集",

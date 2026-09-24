@@ -17,14 +17,24 @@ const search = ref(props.filters.search ?? '');
 const category = ref(props.filters.category ?? '');
 const locale = ref(props.filters.locale ?? '');
 
+// Partial reloads : seule la liste (et les filtres) est rechargée.
+const RELOAD_ONLY = ['items', 'filters'];
+
+const loading = ref(false);
+
 let timer = null;
 watch(search, (value) => {
     if (timer) clearTimeout(timer);
     timer = setTimeout(() => sendFilters(), 300);
 });
-watch([category, locale], () => sendFilters());
+watch([category, locale], () => {
+    if (timer) clearTimeout(timer);
+    sendFilters();
+});
 
 function sendFilters() {
+    router.cancel();
+    loading.value = true;
     router.get(
         '/admin/items',
         {
@@ -32,13 +42,30 @@ function sendFilters() {
             category: category.value || undefined,
             locale: locale.value || undefined,
         },
-        { preserveState: true, preserveScroll: true, replace: true }
+        {
+            only: RELOAD_ONLY,
+            preserveState: true,
+            preserveScroll: true,
+            replace: true,
+            onFinish: () => (loading.value = false),
+        }
     );
 }
 
 function goToPage(url) {
     if (!url) return;
-    router.visit(url, { preserveState: true, preserveScroll: true });
+    router.cancel();
+    loading.value = true;
+    router.visit(url, {
+        only: RELOAD_ONLY,
+        preserveState: true,
+        preserveScroll: true,
+        onFinish: () => (loading.value = false),
+    });
+}
+
+function prefetch(url) {
+    if (url) router.prefetch(url, { only: RELOAD_ONLY });
 }
 
 function linkLabel(label) {
@@ -96,6 +123,9 @@ function linkLabel(label) {
             </div>
 
             <div class="overflow-x-auto rounded-xl border border-white/10 bg-white/[0.03]">
+                <div v-if="loading" class="h-0.5 w-full overflow-hidden">
+                    <div class="h-full w-1/3 animate-pulse bg-[var(--dm-accent)]/60"></div>
+                </div>
                 <table class="w-full text-left text-sm">
                     <thead class="border-b border-white/10 text-xs uppercase tracking-wide text-white/50">
                         <tr>
@@ -105,6 +135,7 @@ function linkLabel(label) {
                             <th class="px-4 py-3">{{ $t('admin.category') }}</th>
                             <th class="px-4 py-3">{{ $t('items.rarity_label') }}</th>
                             <th class="px-4 py-3">{{ $t('admin.icon_downloaded') }}</th>
+                            <th class="px-4 py-3">{{ $t('admin.in_game') }}</th>
                             <th class="px-4 py-3">{{ $t('admin.updated') }}</th>
                             <th class="px-4 py-3"></th>
                         </tr>
@@ -119,12 +150,16 @@ function linkLabel(label) {
                             <td class="px-4 py-2">
                                 <span :class="item.icon_downloaded ? 'text-green-400' : 'text-red-400'">{{ item.icon_downloaded ? $t('admin.yes') : $t('admin.no') }}</span>
                             </td>
+                            <td class="px-4 py-2">
+                                <span :class="item.ingame_image_path ? 'text-green-400' : 'text-red-400'">{{ item.ingame_image_path ? $t('admin.yes') : $t('admin.no') }}</span>
+                            </td>
                             <td class="px-4 py-2 text-xs text-white/50">{{ new Date(item.updated_at).toLocaleString() }}</td>
                             <td class="px-4 py-2 text-right">
-                                <a
-                                    :href="`/admin/items/${item.id}/edit`"
-                                    class="rounded border border-[var(--dm-accent)]/40 bg-[var(--dm-accent)]/10 px-3 py-1 text-xs text-[var(--dm-accent)] transition hover:bg-[var(--dm-accent)]/20"
-                                >
+                <a
+                    :href="`/admin/items/${item.id}/edit`"
+                    @mouseenter="router.prefetch($event.currentTarget.href)"
+                    class="rounded border border-[var(--dm-accent)]/40 bg-[var(--dm-accent)]/10 px-3 py-1 text-xs text-[var(--dm-accent)] transition hover:bg-[var(--dm-accent)]/20"
+                >
                                     {{ $t('admin.edit') }}
                                 </a>
                             </td>
@@ -145,6 +180,7 @@ function linkLabel(label) {
                     <button
                         v-else
                         @click="goToPage(link.url)"
+                        @mouseenter="prefetch(link.url)"
                         :class="[
                             'rounded border px-3 py-1 text-xs transition',
                             link.active

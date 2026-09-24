@@ -128,6 +128,47 @@ class AdminItemManagementTest extends TestCase
         $response->assertSessionHasErrors('hash');
     }
 
+    public function test_media_upload_path_is_propagated_to_sibling_locales(): void
+    {
+        $admin = User::factory()->create(['is_admin' => true]);
+        $item = Item::factory()->create([
+            'hash' => '12345',
+            'locale' => 'fr',
+            'archive_icon_path' => null,
+        ]);
+        Item::factory()->create([
+            'hash' => '12345',
+            'locale' => 'en',
+            'archive_icon_path' => null,
+        ]);
+        Item::factory()->create([
+            'hash' => '99999',
+            'locale' => 'en',
+            'archive_icon_path' => null,
+        ]);
+
+        $this->actingAs($admin)->put("/admin/items/{$item->id}", [
+            'hash' => '12345',
+            'locale' => 'fr',
+            'raw_json' => '{}',
+            'archive_icon_path' => 'archive/ghosts/12345.png',
+            'ingame_image_path' => 'ingame/ghosts/12345.png',
+        ])->assertRedirect();
+
+        $this->assertDatabaseHas('items', [
+            'hash' => '12345',
+            'locale' => 'en',
+            'archive_icon_path' => 'archive/ghosts/12345.png',
+            'ingame_image_path' => 'ingame/ghosts/12345.png',
+        ]);
+
+        $this->assertDatabaseHas('items', [
+            'hash' => '99999',
+            'locale' => 'en',
+            'archive_icon_path' => null,
+        ]);
+    }
+
     public function test_non_admin_cannot_create_or_update(): void
     {
         $user = User::factory()->create(['is_admin' => false]);

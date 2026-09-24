@@ -1,6 +1,9 @@
 <script setup>
 import { computed, reactive, watch } from 'vue';
 import { useForm } from '@inertiajs/vue3';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 /*
  * Fichiers sélectionnés (non envoyés par useForm) : gardés à part puis
@@ -13,8 +16,16 @@ const files = reactive({
 });
 
 function onFileChange(event, key) {
+    // L'icône secondaire n'existe que pour les emblèmes.
+    if (key === 'archive_icon_secondary_file' && form.category_slug !== 'emblems') {
+        files[key] = null;
+        event.target.value = '';
+        return;
+    }
     files[key] = event.target.files?.[0] ?? null;
 }
+
+const isSecondaryUploadAllowed = computed(() => form.category_slug === 'emblems');
 
 function isVideo(path) {
     return /\.(mp4|webm|ogg|ogv|mov|m4v)(?:$|[?#])/i.test(path);
@@ -57,6 +68,7 @@ const props = defineProps({
     mode: { type: String, default: 'create' },
     item: { type: Object, default: null },
     categories: { type: Array, default: () => [] },
+    subcategories: { type: Array, default: () => [] },
     locales: { type: Array, default: () => [] },
 });
 
@@ -89,9 +101,38 @@ const numericFields = [
     { key: 'item_type', label: 'Item type' },
     { key: 'item_sub_type', label: 'Item sub type' },
     { key: 'class_type', label: 'Class type' },
-    { key: 'tier_type', label: 'Tier type' },
     { key: 'bucket_type_hash', label: 'Bucket type hash' },
 ];
+
+/*
+ * Rareté : identifiants Bungie D1 (2=Commun, 3=Peu commun, 4=Rare,
+ * 5=Légendaire, 6=Exotique). Le libellé est traduit selon la LOCALE DE
+ * L'OBJET (form.locale), pas la langue de l'interface.
+ */
+const rarityOptions = [
+    { value: 2, key: 'items.rarity_basic' },
+    { value: 3, key: 'items.rarity_uncommon' },
+    { value: 4, key: 'items.rarity_rare' },
+    { value: 5, key: 'items.rarity_legendary' },
+    { value: 6, key: 'items.rarity_exotic' },
+];
+
+const rarityLabel = (key) => t(key, {}, { locale: form.locale || undefined });
+
+const rarityValue = computed({
+    get: () => (form.tier_type === '' || form.tier_type === null ? '' : Number(form.tier_type)),
+    set: (value) => {
+        form.tier_type = value === '' ? '' : value;
+        const option = rarityOptions.find((o) => o.value === Number(value));
+        form.tier_type_name = option ? rarityLabel(option.key) : '';
+    },
+});
+
+// Si la locale de l'objet change, retraduire le nom du tier déjà choisi.
+watch(() => form.locale, () => {
+    const option = rarityOptions.find((o) => o.value === Number(form.tier_type));
+    if (option) form.tier_type_name = rarityLabel(option.key);
+});
 
 function submit() {
     const payload = { ...form.data() };
@@ -206,8 +247,13 @@ function submit() {
                     <input v-model="form.item_type_name" type="text" class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-sky-300" />
                 </div>
                 <div>
-                    <label class="mb-1 block text-xs text-white/50">Tier type name</label>
-                    <input v-model="form.tier_type_name" type="text" class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-sky-300" />
+                    <label class="mb-1 block text-xs text-white/50">Rareté (tier_type + nom, traduit selon la locale de l'objet : {{ form.locale }})</label>
+                    <select v-model="rarityValue" class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-sky-300">
+                        <option value="" class="bg-black text-white">—</option>
+                        <option v-for="option in rarityOptions" :key="option.value" :value="option.value" class="bg-black text-white">
+                            {{ rarityLabel(option.key) }} ({{ option.value }})
+                        </option>
+                    </select>
                 </div>
             </div>
         </fieldset>
@@ -218,14 +264,19 @@ function submit() {
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                     <label class="mb-1 block text-xs text-white/50">Catégorie (slug)</label>
-                    <input v-model="form.category_slug" type="text" list="admin-categories" class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-sky-300" />
-                    <datalist id="admin-categories">
-                        <option v-for="cat in categories" :key="cat" :value="cat" />
-                    </datalist>
+                    <select v-model="form.category_slug" class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-sky-300">
+                        <option value="" class="bg-black text-white">—</option>
+                        <option v-for="cat in categories" :key="cat" :value="cat" class="bg-black text-white">{{ cat }}</option>
+                        <option v-if="form.category_slug && !categories.includes(form.category_slug)" :value="form.category_slug" class="bg-black text-white">{{ form.category_slug }}</option>
+                    </select>
                 </div>
                 <div>
                     <label class="mb-1 block text-xs text-white/50">Sous-catégorie (slug)</label>
-                    <input v-model="form.subcategory_slug" type="text" class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-sky-300" />
+                    <select v-model="form.subcategory_slug" class="w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none focus:border-sky-300">
+                        <option value="" class="bg-black text-white">—</option>
+                        <option v-for="sub in subcategories" :key="sub" :value="sub" class="bg-black text-white">{{ sub }}</option>
+                        <option v-if="form.subcategory_slug && !subcategories.includes(form.subcategory_slug)" :value="form.subcategory_slug" class="bg-black text-white">{{ form.subcategory_slug }}</option>
+                    </select>
                 </div>
                 <div class="sm:col-span-2">
                     <label class="mb-1 block text-xs text-white/50">Category hashes (séparés par des virgules)</label>
@@ -273,8 +324,9 @@ function submit() {
                         />
                         <div v-else class="flex h-16 w-16 items-center justify-center rounded-lg border border-white/10 bg-black/20 text-xs text-white/30">—</div>
                         <div class="min-w-[220px] flex-1">
-                            <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" @change="onFileChange($event, 'archive_icon_secondary_file')" class="w-full text-xs text-white/70 file:mr-3 file:rounded-lg file:border-0 file:bg-sky-500/20 file:px-3 file:py-2 file:text-xs file:font-medium file:text-sky-300 hover:file:bg-sky-500/30" />
-                            <p v-if="files.archive_icon_secondary_file" class="mt-1 text-xs text-green-400">Fichier sélectionné : {{ files.archive_icon_secondary_file.name }} (écrasera le champ à l'enregistrement)</p>
+                            <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" :disabled="!isSecondaryUploadAllowed" @change="onFileChange($event, 'archive_icon_secondary_file')" class="w-full text-xs text-white/70 file:mr-3 file:rounded-lg file:border-0 file:bg-sky-500/20 file:px-3 file:py-2 file:text-xs file:font-medium file:text-sky-300 hover:file:bg-sky-500/30 disabled:cursor-not-allowed disabled:opacity-50" />
+                            <p v-if="!isSecondaryUploadAllowed" class="mt-1 text-xs text-amber-400">Réservé à la catégorie « emblems ».</p>
+                            <p v-else-if="files.archive_icon_secondary_file" class="mt-1 text-xs text-green-400">Fichier sélectionné : {{ files.archive_icon_secondary_file.name }} (écrasera le champ à l'enregistrement)</p>
                         </div>
                     </div>
                     <label class="mt-3 mb-1 block text-xs text-white/50">Chemin local (relatif à public/)</label>
