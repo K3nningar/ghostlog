@@ -2,6 +2,7 @@
     "layout": {
         "language": "Language",
         "archive": "Home",
+        "database": "Database",
         "archive_index": "Archive index",
         "records": "{count} records",
         "app_description": "The ultimate archive of the Destiny 1 API.",
@@ -79,6 +80,19 @@
         "empty_state": "No sparrow matches these criteria."
     },
 
+    "collections": {
+        "menu": "Kiosks",
+        "emblems_title": "Emblem Collection",
+        "sparrows_title": "Sparrow Collection",
+        "ships_title": "Ship Collection",
+        "argentum_title": "Silver Dust Vendor",
+        "vendor_hash": "Kiosk hash",
+        "ships_empty_state": "No ships have been imported for this collection.",
+        "empty_state": "No emblems have been imported for these categories.",
+        "sparrows_empty_state": "No sparrows have been imported for this collection.",
+        "argentum_empty_state": "No items have been imported for this collection.",
+        "other": "Other"
+    },
     "emblems": {
         "title": "Emblems",
         "search_placeholder": "Emblem name...",
@@ -102,6 +116,14 @@
         "hash_label": "Hash"
     },
 
+
+    "grimoire": {
+        "title": "Grimoire",
+        "subtitle": "The stories and legends of Destiny, gathered in one archive.",
+        "search_placeholder": "Search the Grimoire...",
+        "read_entry": "Read entry",
+        "empty_state": "No Grimoire entries match this search."
+    },
 
     "admin": {
         "title": "Admin",

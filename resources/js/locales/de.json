@@ -2,12 +2,13 @@
     "layout": {
         "language": "Sprache",
         "archive": "Startseite",
+        "database": "Datenbank",
         "archive_index": "Archivindex",
         "records": "{count} Einträge",
         "app_description": "Das ultimative Archiv der Destiny-1-API.",
         "app_description_line2" : "Finden Sie alle Waffen, Rüstungen und kosmetischen Gegenstände aus Destiny 1, für die Ewigkeit bewahrt.",
         "archived_items": "{count} archivierte Objekte",
-        "footer_copyright": "GhostLog — Inoffizielles Destiny-1-API-Archiv © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright": "GhostLog — Inoffizielles Destiny-1-API-Archiv",
         "footer_copyright_bungie": "Daten © Bungie Inc."
     },
 
@@ -129,6 +130,26 @@
         "close": "Schließen"
     },
 
+    "grimoire": {
+        "title": "Grimoire",
+        "subtitle": "Die Geschichten und Legenden von Destiny, gesammelt in einem Archiv.",
+        "search_placeholder": "Im Grimoire suchen...",
+        "read_entry": "Eintrag lesen",
+        "empty_state": "Keine Grimoire-Einträge entsprechen dieser Suche."
+    },
+    "collections": {
+        "menu": "Kioske",
+        "emblems_title": "Abzeichen-Sammlung",
+        "sparrows_title": "Sparrow-Sammlung",
+        "ships_title": "Schiffssammlung",
+        "argentum_title": "Argentum-Staubhändler",
+        "vendor_hash": "Kiosk-Hash",
+        "ships_empty_state": "Für diese Sammlung wurden keine Schiffe importiert.",
+        "empty_state": "Für diese Kategorien wurden keine Abzeichen importiert.",
+        "sparrows_empty_state": "Für diese Sammlung wurden keine Sparrows importiert.",
+        "argentum_empty_state": "Für diese Sammlung wurden keine Objekte importiert.",
+        "other": "Andere"
+    },
     "categories": {
         "weapons": "Waffen",
         "armors": "Rüstungen",

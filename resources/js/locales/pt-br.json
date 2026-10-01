@@ -2,12 +2,13 @@
     "layout": {
         "language": "Idioma",
         "archive": "Página inicial",
+        "database": "Banco de dados",
         "archive_index": "Índice do arquivo",
         "records": "{count} registros",
         "app_description": "O arquivo definitivo da API de Destiny 1.",
         "app_description_line2": "Encontre todas as armas, armaduras e itens cosméticos de Destiny 1, preservados para a eternidade.",
         "archived_items": "{count} itens arquivados",
-        "footer_copyright": "GhostLog — Arquivo não oficial da API de Destiny 1 © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright": "GhostLog — Arquivo não oficial da API de Destiny 1",
         "footer_copyright_bungie": "Dados © Bungie Inc."
     },
     "items": {
@@ -118,6 +119,26 @@
         "other_languages": "Outros idiomas disponíveis",
         "view_in_game": "Ver no jogo",
         "close": "Fechar"
+    },
+    "grimoire": {
+        "title": "Grimório",
+        "subtitle": "As histórias e lendas de Destiny reunidas em um arquivo.",
+        "search_placeholder": "Pesquisar no Grimório...",
+        "read_entry": "Ler entrada",
+        "empty_state": "Nenhuma entrada do Grimório corresponde a esta pesquisa."
+    },
+    "collections": {
+        "menu": "Quiosques",
+        "emblems_title": "Coleção de emblemas",
+        "sparrows_title": "Coleção de Sparrows",
+        "ships_title": "Coleção de naves",
+        "argentum_title": "Vendedor de poeira de Argentum",
+        "vendor_hash": "Hash do quiosque",
+        "ships_empty_state": "Nenhuma nave foi importada para esta coleção.",
+        "empty_state": "Nenhum emblema foi importado para estas categorias.",
+        "sparrows_empty_state": "Nenhum Sparrow foi importado para esta coleção.",
+        "argentum_empty_state": "Nenhum item foi importado para esta coleção.",
+        "other": "Outros"
     },
     "categories": {
         "weapons": "Armas",

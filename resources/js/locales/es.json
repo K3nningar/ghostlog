@@ -2,12 +2,13 @@
     "layout": {
         "language": "Idioma",
         "archive": "Inicio",
+        "database": "Base de datos",
         "archive_index": "Índice del archivo",
         "records": "{count} registros",
         "app_description": "El archivo definitivo de la API de Destiny 1.",
         "app_description_line2": "Encuentra todas las armas, armaduras y objetos cosméticos de Destiny 1, conservados para la eternidad.",
         "archived_items": "{count} objetos archivados",
-        "footer_copyright": "GhostLog — Archivo no oficial de la API de Destiny 1 © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright": "GhostLog — Archivo no oficial de la API de Destiny 1",
         "footer_copyright_bungie": "Datos © Bungie Inc."
     },
     "items": {
@@ -118,6 +119,26 @@
         "other_languages": "Otros idiomas disponibles",
         "view_in_game": "Ver en el juego",
         "close": "Cerrar"
+    },
+    "grimoire": {
+        "title": "Grimorio",
+        "subtitle": "Las historias y leyendas de Destiny, reunidas en un archivo.",
+        "search_placeholder": "Buscar en el Grimorio...",
+        "read_entry": "Leer entrada",
+        "empty_state": "Ninguna entrada del Grimorio coincide con esta búsqueda."
+    },
+    "collections": {
+        "menu": "Quioscos",
+        "emblems_title": "Colección de emblemas",
+        "sparrows_title": "Colección de colibríes",
+        "ships_title": "Colección de naves",
+        "argentum_title": "Vendedor de polvo de Argentum",
+        "vendor_hash": "Hash del quiosco",
+        "ships_empty_state": "No se han importado naves para esta colección.",
+        "empty_state": "No se han importado emblemas para estas categorías.",
+        "sparrows_empty_state": "No se han importado colibríes para esta colección.",
+        "argentum_empty_state": "No se han importado objetos para esta colección.",
+        "other": "Otros"
     },
     "categories": {
         "weapons": "Armas",

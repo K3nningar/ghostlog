@@ -28,7 +28,7 @@ const categoryPaths = {
 </script>
 
 <template>
-    <AppLayout>
+    <AppLayout :title="$t('layout.archive')">
         <div class="min-h-screen bg-[var(--dm-background)] text-[var(--dm-text)]">
 
             <!-- Hero -->

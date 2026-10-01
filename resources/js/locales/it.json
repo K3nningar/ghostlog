@@ -2,12 +2,13 @@
     "layout": {
         "language": "Lingua",
         "archive": "Home",
+        "database": "Database",
         "archive_index": "Indice dell'archivio",
         "records": "{count} elementi",
         "app_description": "L'archivio definitivo dell'API di Destiny 1.",
         "app_description_line2": "Trova tutte le armi, le armature e gli oggetti cosmetici di Destiny 1, conservati per l'eternità.",
         "archived_items": "{count} oggetti archiviati",
-        "footer_copyright": "GhostLog — Archivio non ufficiale dell'API di Destiny 1 © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright": "GhostLog — Archivio non ufficiale dell'API di Destiny 1",
         "footer_copyright_bungie": "Dati © Bungie Inc."
     },
     "items": {
@@ -118,6 +119,26 @@
         "other_languages": "Altre lingue disponibili",
         "view_in_game": "Visualizza nel gioco",
         "close": "Chiudi"
+    },
+    "grimoire": {
+        "title": "Grimorio",
+        "subtitle": "Le storie e le leggende di Destiny, raccolte in un archivio.",
+        "search_placeholder": "Cerca nel Grimorio...",
+        "read_entry": "Leggi la voce",
+        "empty_state": "Nessuna voce del Grimorio corrisponde a questa ricerca."
+    },
+    "collections": {
+        "menu": "Chioschi",
+        "emblems_title": "Collezione di emblemi",
+        "sparrows_title": "Collezione di passeri",
+        "ships_title": "Collezione di navi",
+        "argentum_title": "Venditore di polvere di Argentum",
+        "vendor_hash": "Hash del chiosco",
+        "ships_empty_state": "Non sono state importate navi per questa collezione.",
+        "empty_state": "Non sono stati importati emblemi per queste categorie.",
+        "sparrows_empty_state": "Non sono stati importati oggetti per questa collezione.",
+        "argentum_empty_state": "Non sono stati importati oggetti per questa collezione.",
+        "other": "Altro"
     },
     "categories": {
         "weapons": "Armi",

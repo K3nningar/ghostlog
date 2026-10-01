@@ -2,12 +2,13 @@
     "layout": {
         "language": "言語",
         "archive": "ホーム",
+        "database": "データベース",
         "archive_index": "アーカイブインデックス",
         "records": "{count}件",
         "app_description": "Destiny 1 APIの究極のアーカイブ。",
         "app_description_line2": "Destiny 1のすべての武器、防具、コスメティックアイテムを永遠に保存しています。",
         "archived_items": "{count}個のアイテムをアーカイブ",
-        "footer_copyright": "GhostLog — 非公式Destiny 1 APIアーカイブ © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright": "GhostLog — 非公式Destiny 1 APIアーカイブ",
         "footer_copyright_bungie": "データ © Bungie Inc."
     },
     "items": {
@@ -118,6 +119,26 @@
         "other_languages": "その他の対応言語",
         "view_in_game": "ゲーム内で表示",
         "close": "閉じる"
+    },
+    "grimoire": {
+        "title": "グリモワール",
+        "subtitle": "Destinyの物語と伝説を一つのアーカイブに収録。",
+        "search_placeholder": "グリモワールを検索...",
+        "read_entry": "エントリを読む",
+        "empty_state": "検索に一致するグリモワールの項目はありません。"
+    },
+    "collections": {
+        "menu": "キオスク",
+        "emblems_title": "エンブレムコレクション",
+        "sparrows_title": "スパローコレクション",
+        "ships_title": "シップコレクション",
+        "argentum_title": "アルジェンタムダストのベンダー",
+        "vendor_hash": "キオスクのハッシュ",
+        "ships_empty_state": "このコレクションにはシップがインポートされていません。",
+        "empty_state": "これらのカテゴリーにはエンブレムがインポートされていません。",
+        "sparrows_empty_state": "このコレクションにはスパローがインポートされていません。",
+        "argentum_empty_state": "このコレクションにはアイテムがインポートされていません。",
+        "other": "その他"
     },
     "categories": {
         "weapons": "武器",

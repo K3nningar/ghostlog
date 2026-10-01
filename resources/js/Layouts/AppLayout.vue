@@ -55,7 +55,9 @@ function logout() {
 </script>
 
 <template>
-    <Head :title="title" />
+    <Head 
+    :title="title" 
+    />
 
     <div class="min-h-screen bg-[var(--dm-background)] text-[var(--dm-text)]">
         <header class="sticky top-0 z-30 border-b border-white/10 bg-[#101010]/90 px-5 py-4 backdrop-blur-xl sm:px-8">
@@ -68,12 +70,27 @@ function logout() {
                 </Link>
                 <nav class="hidden items-center gap-6 text-xs uppercase tracking-[0.16em] text-white/50 md:flex">
                     <Link href="/" class="transition hover:text-white">{{ $t('layout.archive') }}</Link>
-                    <Link href="/weapons" class="transition hover:text-white">{{ $t('categories.weapons') }}</Link>
-                    <Link href="/armors" class="transition hover:text-white">{{ $t('categories.armors') }}</Link>
-                    <Link href="/ships" class="transition hover:text-white">{{ $t('categories.ships') }}</Link>
-                    <Link href="/sparrows" class="transition hover:text-white">{{ $t('categories.sparrows') }}</Link>
-                    <Link href="/emblems" class="transition hover:text-white">{{ $t('categories.emblems') }}</Link>
-                    <Link href="/ghosts" class="transition hover:text-white">{{ $t('categories.ghosts') }}</Link>
+                    <details class="group relative">
+                        <summary class="cursor-pointer list-none transition hover:text-white">{{ $t('layout.database') }}</summary>
+                        <div class="absolute left-0 top-full z-40 mt-3 min-w-48 rounded-lg border border-white/10 bg-[#151515] p-2 shadow-xl">
+                            <Link href="/weapons" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('categories.weapons') }}</Link>
+                            <Link href="/armors" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('categories.armors') }}</Link>
+                            <Link href="/ships" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('categories.ships') }}</Link>
+                            <Link href="/sparrows" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('categories.sparrows') }}</Link>
+                            <Link href="/emblems" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('categories.emblems') }}</Link>
+                            <Link href="/ghosts" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('categories.ghosts') }}</Link>
+                            <Link href="/grimoire" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('grimoire.title') }}</Link>
+                        </div>
+                    </details>
+                    <details class="group relative">
+                        <summary class="cursor-pointer list-none transition hover:text-white">{{ $t('collections.menu') }}</summary>
+                        <div class="absolute left-0 top-full z-40 mt-3 min-w-48 rounded-lg border border-white/10 bg-[#151515] p-2 shadow-xl">
+                            <Link href="/collections/emblems" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('collections.emblems_title') }}</Link>
+                            <Link href="/collections/sparrows" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('collections.sparrows_title') }}</Link>
+                            <Link href="/collections/ships" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('collections.ships_title') }}</Link>
+                            <Link href="/collections/argentum" class="block rounded px-3 py-2 transition hover:bg-white/5 hover:text-white">{{ $t('collections.argentum_title') }}</Link>
+                        </div>
+                    </details>
                     <Link v-if="$page.props.auth.isAdmin" href="/admin/items" class="text-[var(--dm-accent)] transition hover:text-white">{{ $t('admin.title') }}</Link>
                 </nav>
                 <div class="flex items-center gap-2">

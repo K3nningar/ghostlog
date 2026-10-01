@@ -13,13 +13,13 @@
                     <div class="flex h-40 max-w-full items-center justify-center rounded bg-neutral-900 cursor-pointer" @click="openMediaModal">
                         <img
                             v-if="emblem.archive_icon_path"
-                            :src="emblem.archive_icon_path"
+                            :src="`/${emblem.archive_icon_path}`"
                             :alt="emblem.name"
                             style="height:70px;"
                         />
                         <img
                             v-if="emblem.archive_icon_path_secondary"
-                            :src="emblem.archive_icon_path_secondary"
+                            :src="`/${emblem.archive_icon_path_secondary}`"
                             :alt="emblem.name"
                             style="height: 70px; margin-left: -4px;"
                             @click="openMediaModal"
@@ -84,13 +84,13 @@
                     <div class="flex h-full items-center justify-center bg-black/20">
                         <img
                             v-if="emblem?.archive_icon_path"
-                            :src="emblem.archive_icon_path"
+                            :src="`/${emblem.archive_icon_path}`"
                             :alt="emblem.name"
                             class="h-full w-auto object-contain"
                         />
                         <img
                             v-if="emblem?.archive_icon_path_secondary"
-                            :src="emblem.archive_icon_path_secondary"
+                            :src="`/${emblem.archive_icon_path_secondary}`"
                             :alt="emblem.name"
                             class="h-full w-auto max-w-full object-contain"
                         />

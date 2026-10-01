@@ -2,12 +2,13 @@
     "layout": {
         "language": "Langue",
         "archive": "Accueil",
+        "database": "Base de données",
         "archive_index": "Index de l'archive",
         "records": "{count} éléments",
         "app_description": "L'archive ultime de l'API Destiny 1.",
         "app_description_line2" : "Retrouvez tout l'arsenal, les armures et les objets cosmétiques de Destiny 1, conservés pour l'éternité.",
         "archived_items": "{count} objets archivés",
-        "footer_copyright": "GhostLog — Archive API non-officielle Destiny 1 © Nicolas BOUTINAUD / K3nningar",
+        "footer_copyright": "GhostLog — Archive API non-officielle Destiny 1",
         "footer_copyright_bungie": "Données © Bungie Inc."
     },
 
@@ -79,6 +80,19 @@
         "empty_state": "Aucun passereau ne correspond à ces critères."
     },
 
+    "collections": {
+        "menu": "Kiosques",
+        "emblems_title": "Collection d’emblèmes",
+        "sparrows_title": "Collection de passereaux",
+        "ships_title": "Collection de vaisseaux",
+        "argentum_title": "Vendeur de poussière d’Argentum",
+        "vendor_hash": "Hash du kiosque",
+        "ships_empty_state": "Aucun vaisseau importé pour cette collection.",
+        "empty_state": "Aucun emblème importé pour ces catégories.",
+        "sparrows_empty_state": "Aucun passereau importé pour cette collection.",
+        "argentum_empty_state": "Aucun objet importé pour cette collection.",
+        "other": "Autres"
+    },
     "emblems": {
         "title": "Emblèmes",
         "search_placeholder": "Nom de l'emblème...",
@@ -100,6 +114,14 @@
         "results_count": "{count} spectre trouvé | {count} spectres trouvés",
         "empty_state": "Aucun spectre ne correspond à ces critères.",
         "hash_label": "Hash"
+    },
+
+    "grimoire": {
+        "title": "Grimoire",
+        "subtitle": "Les récits et légendes de Destiny, réunis dans une archive.",
+        "search_placeholder": "Rechercher dans le grimoire...",
+        "read_entry": "Lire l’entrée",
+        "empty_state": "Aucune entrée du grimoire ne correspond à cette recherche."
     },
 
     "admin": {

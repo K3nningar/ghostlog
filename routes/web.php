@@ -1,15 +1,20 @@
 <?php
 
 use App\Http\Controllers\Admin\ItemAdminController;
+use App\Http\Controllers\ArmorController;
+use App\Http\Controllers\EmblemController;
 use App\Http\Controllers\GhostController;
+use App\Http\Controllers\GrimoireController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemLocaleController;
-use App\Http\Controllers\EmblemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShipController;
 use App\Http\Controllers\SparrowController;
+use App\Http\Controllers\VendorArgentumController;
+use App\Http\Controllers\VendorEmblemController;
+use App\Http\Controllers\VendorShipController;
+use App\Http\Controllers\VendorSparrowController;
 use App\Http\Controllers\WeaponController;
-use App\Http\Controllers\ArmorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -22,11 +27,20 @@ Route::get('/ships', [ShipController::class, 'index'])->name('ships.index');
 
 Route::get('/emblems', [EmblemController::class, 'index'])->name('emblems.index');
 
+Route::get('/collections/emblems', [VendorEmblemController::class, 'index'])->name('collections.emblems');
+
+Route::get('/collections/sparrows', [VendorSparrowController::class, 'index'])->name('collections.sparrows');
+
+Route::get('/collections/ships', [VendorShipController::class, 'index'])->name('collections.ships');
+
+Route::get('/collections/argentum', [VendorArgentumController::class, 'index'])->name('collections.argentum');
+
 Route::get('/ghosts', [GhostController::class, 'index'])->name('ghosts.index');
+
+Route::get('/grimoire', [GrimoireController::class, 'index'])->name('grimoire.index');
 
 Route::get('/weapons', [WeaponController::class, 'index'])->name('weapons.index');
 Route::get('/weapons/{hash}/perks', [WeaponController::class, 'perks'])->name('weapons.perks');
-
 
 Route::get('/armors', [ArmorController::class, 'index'])->name('armors.index');
 
